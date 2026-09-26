@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#050910">
+  <title>ORBIS / Future Studies</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="future.css?v=3">
+  <script src="future.js?v=3" defer></script>
+</head>
+<body data-world="orbis">
+  <header class="masthead">
+    <a href="#orbis" class="identity" aria-label="Maharajahul Future Studies, first scene"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M4 31 15 8l6 14 5-14 10 23M10 31l5-11 5 11 6-11 5 11" fill="none" stroke="currentColor" stroke-width="2"/></svg><span>MAHARAJAHUL<b>FUTURE STUDIES</b></span></a>
+    <p class="masthead-center">ASTRA × MAHARAJAHUL DESIGN <span>EXPERIMENTAL COLLECTION / 02</span></p>
+    <button id="motion" class="motion-control" aria-pressed="false"><span class="motion-light"></span><span id="motion-label">Pause motion</span></button>
+  </header>
+
+  <main id="experience" aria-labelledby="world-title">
+    <canvas id="gpu" aria-label="Interactive procedural graphics"></canvas>
+    <canvas id="network" hidden aria-label="Rotating three-dimensional network of connected nodes"></canvas>
+    <div class="scene-vignette" aria-hidden="true"></div>
+    <section id="glass-interface" hidden aria-label="Interactive ambient light studio">
+      <div class="glass-pane glass-status"><span class="studio-mark">✳</span><span>STILL STUDIO</span><span class="status-dot"></span><span class="glass-edition">LIVE LIGHT</span></div>
+      <div class="glass-pane glass-main">
+        <div class="glass-card-top"><span>YOUR MOMENT OF QUIET</span><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="6"/><path d="M16 2v4m0 20v4M2 16h4m20 0h4M6 6l3 3m14 14 3 3M6 26l3-3M23 9l3-3"/></svg></div>
+        <h2 id="glass-title">Morning<br>light.</h2>
+        <p id="glass-caption">Nothing to finish. A little room to breathe.</p>
+        <div class="glass-card-bottom"><span id="glass-scene-label">01 / SUNLIT DUNES</span><span>↗</span></div>
+      </div>
+      <div class="glass-widgets">
+        <button class="glass-pane glass-motion" id="glass-motion" aria-pressed="false"><span class="motion-glyph" aria-hidden="true">≈</span><span>Motion<strong id="glass-motion-label">Flowing</strong></span></button>
+        <div class="glass-pane glass-light"><label for="glass-light"><span>Light</span><output id="glass-light-value" for="glass-light">78%</output></label><input id="glass-light" type="range" min="25" max="100" value="78" aria-label="Environment brightness"></div>
+      </div>
+      <div class="glass-pane glass-scenes" role="group" aria-label="Time of day"><button data-light-scene="0" aria-pressed="true"><span aria-hidden="true">☀</span>Dawn</button><button data-light-scene="1" aria-pressed="false"><span aria-hidden="true">◒</span>Dusk</button><button data-light-scene="2" aria-pressed="false"><span aria-hidden="true">☾</span>Night</button></div>
+      <p class="glass-footnote">A SMALL SPACE. ENTIRELY YOURS.</p>
+    </section>
+    <div class="topline"><span id="category">01 / ORBITAL ENVIRONMENTS</span><span><i></i> LIVE GENERATIVE RENDER</span></div>
+    <div class="corner corner-tl" aria-hidden="true"></div><div class="corner corner-tr" aria-hidden="true"></div><div class="corner corner-bl" aria-hidden="true"></div><div class="corner corner-br" aria-hidden="true"></div>
+
+    <div class="world-content">
+      <p class="eyebrow"><span></span><span id="eyebrow">THE NEXT FRONTIER IS A FEELING.</span></p>
+      <h1 id="world-title">NOT FARTHER.<br><em>BEYOND.</em></h1>
+      <p class="description" id="description">A world that exists only in light.<br>Trace its rings. Turn its sun. Find another perspective.</p>
+      <div class="world-caption"><span id="world-number">001</span><p id="world-caption">ORBIS<br><b>AN IMAGINARY DESTINATION</b></p></div>
+    </div>
+
+    <div class="instrument" aria-hidden="true"><svg viewBox="0 0 104 104"><circle cx="52" cy="52" r="41"/><circle cx="52" cy="52" r="31" stroke-dasharray="1 7"/><path d="M52 0v21m0 62v21M0 52h21m62 0h21M28 28l9 9m30 30 9 9M28 76l9-9m30-30 9-9"/><circle cx="52" cy="52" r="3" fill="currentColor"/></svg><span id="instrument-label">SECTOR 01 / OPEN SPACE</span></div>
+    <div class="object-label"><span class="leader"></span><span id="object-label">RING SYSTEM / PROCEDURAL</span></div>
+    <div class="telemetry"><div><span id="readout-label">SUN AZIMUTH</span><strong id="readout">144°</strong></div><div><span>RENDER PATH</span><strong id="renderer-label">WEBGL / GLSL</strong></div><div class="resolution"><span>RENDER BUFFER</span><strong id="resolution">—</strong></div></div>
+
+    <div class="interaction-dock">
+      <button class="primary-action" id="action"><span id="action-label">Enter orbit</span><svg viewBox="0 0 30 20" aria-hidden="true"><path d="M0 10h26M18 2l9 8-9 8" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button>
+      <div class="control-stack"><label for="parameter"><span id="parameter-label">SUN ANGLE</span><output id="parameter-value" for="parameter">40%</output></label><input id="parameter" type="range" min="0" max="100" value="40"></div>
+      <div class="variant-control" aria-label="Visual treatment"><button data-variant="0" aria-pressed="true">Azure</button><button data-variant="1" aria-pressed="false">Ember</button><button data-variant="2" aria-pressed="false">Ice</button></div>
+    </div>
+    <p class="gesture-hint" id="gesture-hint">MOVE OR DRAG TO CHANGE PERSPECTIVE</p>
+    <div id="unavailable" hidden role="status"><strong>This scene needs WebGL.</strong><p id="render-error">GPU rendering is unavailable here. The Synapse scene also works without WebGL.</p><a href="#synapse">Open Synapse →</a></div>
+  </main>
+
+  <nav class="world-nav" aria-label="Six futuristic studies">
+    <a href="#orbis" aria-current="page"><span class="nav-symbol">◉</span><span><b>01</b> ORBIS<small>Beyond the known</small></span></a>
+    <a href="#morph"><span class="nav-symbol">∞</span><span><b>02</b> MORPH<small>Matter in motion</small></span></a>
+    <a href="#synapse"><span class="nav-symbol">⌘</span><span><b>03</b> SYNAPSE<small>Connected intelligence</small></span></a>
+    <a href="#velocity"><span class="nav-symbol">≫</span><span><b>04</b> VELOCITY<small>Outrun ordinary</small></span></a>
+    <a href="#chroma"><span class="nav-symbol">◇</span><span><b>05</b> CHROMA<small>Light, reassembled</small></span></a>
+    <a href="#lucent"><span class="nav-symbol">◌</span><span><b>06</b> LUCENT<small>Light you can touch</small></span></a>
+  </nav>
+  <footer><span>SIX ORIGINAL INTERACTIVE STUDIES · FICTIONAL SYSTEMS</span><a href="../index.html">Earlier collection ↗</a><span>NO ASSETS. NO FRAMEWORK. JUST CODE.</span></footer>
+</body>
+</html>

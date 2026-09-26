@@ -1,0 +1,54 @@
+# Design handoff
+
+Decide which artifact owns each decision before moving information between a
+design file and an application.
+
+## Establish the mapping
+
+Record only the mappings needed for the task:
+
+| Design decision | Typical owner | Runtime evidence |
+|---|---|---|
+| Brand values and reusable type roles | Shared design variables | Theme or token definitions |
+| Layout relationship | Component/frame constraints | Layout rules at relevant sizes |
+| Component state | Variants and interaction specification | Props, state, and events |
+| Navigation and data | Application | Route and state transitions |
+| Image or illustration | Approved asset | Source file, crop, and usage |
+
+These are examples, not a rule that a design file always takes precedence.
+Resolve disagreements using the user's brief and the product's actual contract.
+
+## From Figma to implementation
+
+Inspect the relevant frame, components, variables, and assets through the
+available integration. Capture a visual reference as well as the structure.
+An exported image alone does not reveal auto-layout behavior or hidden states.
+
+Map a design component to an existing runtime component when it represents
+the same concept. Explain material differences in behavior before forcing
+the match. Reuse real assets where permitted.
+
+Translate relationships rather than copying every coordinate. Compare the
+render at the design's dimensions, then check a width the design did not show.
+Longer text and an open keyboard can expose constraints absent from a frame.
+
+## From implementation to design
+
+Identify the routes and states being represented. Build design structure from
+those states and keep stable names for reusable concepts. Label any deliberate
+visual exploration so it is not mistaken for the currently shipped interface.
+
+If Code Connect or a similar mapping system is available, connect real
+components and properties. Do not publish a mapping to a component that does
+not exist or imply the connection was verified without exercising it.
+
+## Interaction and motion handoff
+
+Communicate trigger, starting state, ending state, interruption, and the
+reduced-motion result. A video demonstrates appearance but does not specify
+state ownership. Include that ownership where implementation could be ambiguous.
+
+Verify that an edit did not detach variants or break a mapped component.
+Report the actual design artifact and the corresponding implemented surface.
+If the integration is unavailable, deliver the mapping and clearly identify
+which design-file actions were not performed.

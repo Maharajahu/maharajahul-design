@@ -1,0 +1,6 @@
+interface:
+  display_name: "Maharajahul Design"
+  short_description: "Design decisions that become working interfaces"
+  default_prompt: "Use $maharajahul-design to turn this brief into a working interface and inspect the result."
+policy:
+  allow_implicit_invocation: true

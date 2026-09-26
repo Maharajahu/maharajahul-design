@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Five small, interactive design studies made with Maharajahul Design. No frameworks or external assets.">
+  <title>Off Hours · Maharajahul Design</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="gallery-bar">
+    <a class="gallery-brand" href="#edition"><span class="brand-mark">M.</span><span>MAHARAJAHUL <b>DESIGN STUDIES / ASTRA</b></span></a>
+    <span class="gallery-note">Five small worlds. Zero dependencies.</span>
+  </header>
+  <nav class="gallery-nav" aria-label="Design studies">
+    <a href="#edition" aria-current="page"><span>01</span> Off Hours <small>Editorial</small></a>
+    <a href="#pulse"><span>02</span> Pulse <small>Dashboard</small></a>
+    <a href="#form"><span>03</span> Form <small>Product</small></a>
+    <a href="#cutroom"><span>04</span> Cutroom <small>Workspace</small></a>
+    <a href="#drift"><span>05</span> Drift <small>Generative</small></a>
+  </nav>
+  <main>
+    <section class="study edition" id="edition" aria-labelledby="edition-title">
+      <div class="edition-masthead"><strong>OFF HOURS<span>®</span></strong><span>A JOURNAL FOR THE IN-BETWEEN</span><span>VOLUME 01 — AUTUMN</span></div>
+      <div class="edition-grid">
+        <div class="edition-copy"><p class="eyebrow">OBSERVATIONS / CITY LIFE</p><h1 id="edition-title">A quieter<br>kind of <em>city.</em></h1><p class="edition-deck">There is another city inside the one you know. You just have to wait for the rush to leave.</p><button class="text-button" id="read-essay">Read the field note <span aria-hidden="true">↗</span></button><div class="edition-byline"><span class="small-sun" aria-hidden="true">✳</span><span>An original short read<br><b>Three minutes of doing less.</b></span></div></div>
+        <figure class="city-art">
+          <svg viewBox="0 0 660 590" role="img" aria-label="Original geometric illustration of a sunlit city courtyard in terracotta, stone and forest green">
+            <defs><pattern id="windows" width="42" height="54" patternUnits="userSpaceOnUse"><rect x="13" y="12" width="13" height="25" fill="#34493e"/></pattern><pattern id="balconies" width="60" height="47" patternUnits="userSpaceOnUse"><path d="M9 8h36v29H9z" fill="#a96f4e"/><path d="M8 24h39M14 24v15M23 24v15M32 24v15M42 24v15" stroke="#5c5343" stroke-width="2"/></pattern></defs>
+            <rect width="660" height="590" fill="#e8cbb2"/><circle cx="446" cy="141" r="90" fill="#f1dfbb"/>
+            <path d="M0 448 660 405v185H0" fill="#b5ad8a"/><path d="m233 475 176-94 251 176v33H319" fill="#808a69"/>
+            <path d="M0 111h205v352L0 526" fill="#ba7052"/><path d="m205 111 59 35v302l-59 15" fill="#805044"/><path d="M0 123h193v322L0 508" fill="url(#windows)"/>
+            <path d="M322 230h187v223H322" fill="#e4bf8c"/><path d="m509 230 77-56v260l-77 19" fill="#bd976d"/><path d="M334 243h164v191H334" fill="url(#balconies)"/>
+            <path d="M559 51h101v396l-101-23" fill="#ddd4af"/><path d="M571 77h89v334h-89" fill="url(#windows)"/>
+            <path d="M381 445v-51a29 29 0 0 1 58 0v51" fill="#344e40"/><path d="m233 475 94 32-41 83H140" fill="#d8c7a4"/>
+            <path d="M46 590V410M614 590V370" stroke="#384b38" stroke-width="13"/>
+            <g fill="#465b3e"><ellipse cx="51" cy="394" rx="80" ry="122"/><ellipse cx="632" cy="354" rx="64" ry="113"/></g>
+            <g fill="#64764d"><ellipse cx="23" cy="369" rx="42" ry="83"/><ellipse cx="611" cy="326" rx="34" ry="76"/></g>
+            <path d="m307 515 62 6-8 10-62-6M310 502l62 6M319 504l-7 23m47-19-7 22" stroke="#384b38" stroke-width="5"/>
+            <path d="m460 518 53 3m-46-9-2 12m43-8-2 12" stroke="#eee0bc" stroke-width="4"/>
+          </svg>
+          <figcaption><span>PLATE 001 / THE COURTYARD</span><span>Illustration, not a photograph</span></figcaption>
+        </figure>
+      </div>
+      <div class="edition-foot"><span>LESS NOISE. MORE NOTICE.</span><p>A door left open. A warm square of pavement. Somewhere to stay a little longer.</p><span>01 — 05</span></div>
+    </section>
+
+    <section class="study pulse" id="pulse" hidden aria-labelledby="pulse-title">
+      <div class="app-heading"><strong class="pulse-brand">p<span>u</span>lse<span class="status-dot"></span></strong><span class="tag">SIMULATED HOME DATA</span><span>Home / Overview</span></div>
+      <div class="pulse-title"><div><p class="eyebrow">YOUR ENERGY, IN PERSPECTIVE</p><h1 id="pulse-title">A little more <em>balance.</em></h1></div><div class="segmented" aria-label="Chart period"><button data-period="today" aria-pressed="true">Today</button><button data-period="yesterday" aria-pressed="false">Yesterday</button></div></div>
+      <div class="energy-grid">
+        <div class="energy-chart"><div class="chart-top"><div><p class="eyebrow">ENERGY CONSUMED</p><div class="big-number"><span id="energy-total">13.4</span><span>kWh</span></div></div><span class="chart-key">● 2-hour intervals</span></div>
+          <svg class="consumption-chart" viewBox="0 0 680 210" role="img" aria-labelledby="chart-title"><title id="chart-title">Today's simulated energy consumption in kilowatt-hours per two-hour interval</title><defs><linearGradient id="chart-fill" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#b5dca2" stop-opacity=".65"/><stop offset="1" stop-color="#b5dca2" stop-opacity="0"/></linearGradient></defs><g stroke="#dbe1d6" stroke-dasharray="3 6"><path d="M0 35h680M0 100h680M0 165h680"/></g><path id="energy-area" fill="url(#chart-fill)"/><path id="energy-line" fill="none" stroke="#3f643e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <div class="chart-axis"><span>00:00</span><span>06:00</span><span>12:00</span><span>18:00</span><span>22:00</span></div><p class="chart-detail" id="energy-peak"></p>
+        </div>
+        <div class="battery-card"><p class="eyebrow">STORED FOR LATER</p><div class="battery-ring"><div><strong>72<span>%</span></strong><span>HOME BATTERY</span></div></div><p>Some sunshine,<br>saved for tonight.</p><span class="battery-note">Illustrative storage level</span></div>
+        <div class="energy-insight"><span class="insight-symbol" aria-hidden="true">↳</span><div><p class="eyebrow">YOUR NEXT SMALL CHANGE</p><h2>Let the car charge after dark.</h2><p>Schedule a sample overnight charging session.</p></div><button class="switch" id="charging" aria-pressed="false" aria-label="Schedule overnight charging"><span></span></button></div>
+        <p class="charging-note" id="charging-note" aria-live="polite">Not scheduled · no additional energy planned.</p>
+      </div>
+    </section>
+
+    <section class="study form" id="form" hidden aria-labelledby="form-title">
+      <div class="form-heading"><strong>f o r m<span> / objects for living</span></strong><span>THE FIRST COLLECTION — 001</span></div>
+      <div class="product-grid"><div class="lamp-stage"><span class="product-plate">STUDY NO. 01<br>THE EVERYDAY LAMP</span>
+        <svg viewBox="0 0 640 650" role="img" aria-label="Original adjustable-color table lamp illustration" id="lamp-art"><defs><radialGradient id="lamp-halo"><stop stop-color="#ffdaa0" stop-opacity=".8"/><stop offset="1" stop-color="#ffdaa0" stop-opacity="0"/></radialGradient><linearGradient id="lamp-shade"><stop stop-color="#fff" stop-opacity=".28"/><stop offset=".5" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".2"/></linearGradient><radialGradient id="lamp-shadow"><stop stop-color="#3b3027" stop-opacity=".25"/><stop offset="1" stop-color="#3b3027" stop-opacity="0"/></radialGradient></defs>
+          <circle cx="320" cy="302" r="214" fill="#e8ddcd"/><ellipse cx="334" cy="555" rx="177" ry="27" fill="url(#lamp-shadow)"/><ellipse id="lamp-light" cx="320" cy="448" rx="205" ry="141" fill="url(#lamp-halo)"/>
+          <path d="M369 541c78 30 137-20 184 25" fill="none" stroke="#756d60" stroke-width="3"/>
+          <ellipse cx="320" cy="536" rx="95" ry="19" class="lamp-finish"/><rect x="226" y="520" width="188" height="16" rx="7" class="lamp-finish"/><ellipse cx="320" cy="520" rx="94" ry="18" class="lamp-finish"/><ellipse cx="320" cy="519" rx="94" ry="18" fill="url(#lamp-shade)"/>
+          <rect x="307" y="261" width="26" height="263" rx="12" class="lamp-finish"/><rect x="307" y="261" width="26" height="263" rx="12" fill="url(#lamp-shade)"/>
+          <path d="M167 288c10-111 67-148 153-148s143 37 153 148z" class="lamp-finish"/><path d="M167 288c10-111 67-148 153-148s143 37 153 148z" fill="url(#lamp-shade)"/><ellipse cx="320" cy="288" rx="153" ry="23" class="lamp-finish"/><ellipse cx="320" cy="289" rx="140" ry="14" fill="#ecd7af"/><ellipse cx="320" cy="290" rx="65" ry="8" fill="#fff0d1"/>
+        </svg><span class="product-caption">Soft edges. A warm place to land.</span></div>
+        <div class="product-copy"><p class="eyebrow">LESS, BUT A LITTLE BETTER.</p><h1 id="form-title">Good light.<br><em>Quiet company.</em></h1><p class="product-description">One considered curve. A pool of warm light. A small object that makes the end of the day feel like yours.</p><div class="product-price">£148 <span>Concept price · not for sale</span></div>
+          <fieldset class="finishes"><legend>01 / Finish <span id="finish-label">Terracotta</span></legend><label style="--swatch:#ae6046"><input type="radio" name="finish" value="Terracotta" checked><span>Terracotta</span></label><label style="--swatch:#e2dbc8"><input type="radio" name="finish" value="Chalk"><span>Chalk</span></label><label style="--swatch:#454a44"><input type="radio" name="finish" value="Graphite"><span>Graphite</span></label></fieldset>
+          <div class="light-control"><label for="brightness">02 / Light level <output id="light-output" for="brightness">70%</output></label><input id="brightness" type="range" min="0" max="100" value="70"></div><button class="product-action" id="review-lamp">Review your configuration <span aria-hidden="true">↗</span></button><p class="product-detail">A local interactive concept. No account. No checkout.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="study cutroom" id="cutroom" hidden aria-labelledby="cutroom-title">
+      <div class="cutroom-heading"><strong><span aria-hidden="true">▧</span> CUTROOM</strong><span id="cutroom-title">A day, in four moments <b>Browser editor study</b></span><span class="tag">LOCAL PREVIEW</span></div>
+      <div class="editor-body"><aside class="clip-bin" aria-label="Scene selection"><p class="eyebrow">THE SELECTS <span>04</span></p><button class="clip" data-clip="0" aria-pressed="true"><span class="clip-thumb dawn"></span><span>01 — First light<small>00:00 — 00:04</small></span></button><button class="clip" data-clip="1" aria-pressed="false"><span class="clip-thumb noon"></span><span>02 — Long shadows<small>00:04 — 00:08</small></span></button><button class="clip" data-clip="2" aria-pressed="false"><span class="clip-thumb dusk"></span><span>03 — Blue hour<small>00:08 — 00:12</small></span></button><button class="clip" data-clip="3" aria-pressed="false"><span class="clip-thumb night"></span><span>04 — Homeward<small>00:12 — 00:16</small></span></button><p class="bin-note">Four original vector scenes.<br>No video files loaded.</p></aside>
+        <div class="editor-preview"><div class="preview-toolbar"><span>PROGRAM MONITOR</span><span>16:9 / VECTOR</span></div><div class="scene-preview dawn" id="scene-preview"><svg viewBox="0 0 960 540" role="img" aria-label="Layered mountain landscape with a setting sun"><circle cx="660" cy="183" r="60" class="scene-sun"/><path d="m0 350 183-185 172 166 140-221 234 256 137-175 94 87v262H0" class="mountain-far"/><path d="m0 386 257-161 231 201 207-199 265 147v166H0" class="mountain-mid"/><path d="M0 453q162-96 366 0t594-20v107H0" class="mountain-near"/><path d="M429 540q46-67 71-80t-13-32" fill="none" stroke="#f4d6ad" stroke-width="3" opacity=".45"/></svg><div class="scene-caption"><span>AN ORDINARY DAY</span><strong id="scene-name">First light.</strong></div><span class="frame-number" id="frame-number">01 / 04</span></div><div class="transport"><button id="rewind" aria-label="Back to beginning">↤</button><button id="play-cut" aria-pressed="false">▶ Play cut</button><output id="timecode" aria-live="off">00:00 / 00:16</output><span>Sketch sequence</span></div></div></div>
+      <div class="timeline"><div class="timeline-heading"><span>SEQUENCE 01 <b>Four scenes. One small story.</b></span><span>16 SECONDS</span></div><div class="timeline-clips" aria-hidden="true"><span>FIRST LIGHT</span><span>LONG SHADOWS</span><span>BLUE HOUR</span><span>HOMEWARD</span></div><label class="scrub-label" for="playhead">Playhead <span>Drag to explore the cut</span></label><input id="playhead" type="range" min="0" max="16" value="0" step="0.05"></div>
+    </section>
+
+    <section class="study drift" id="drift" hidden aria-labelledby="drift-title">
+      <canvas id="terrain" aria-label="Animated line drawing of a rolling abstract landscape"></canvas>
+      <div class="drift-heading"><strong>DRIFT<span> / a field in motion</span></strong><span>PROCEDURAL STUDY — 005</span></div>
+      <div class="drift-copy"><p class="eyebrow">NOT EVERYTHING NEEDS TO GO SOMEWHERE.</p><h1 id="drift-title">Find your<br><em>own frequency.</em></h1><p>An imaginary landscape, drawn one line at a time.<br>Move across the field. Change its character. Stay awhile.</p></div>
+      <div class="drift-controls"><div class="relief-control"><label for="relief">RELIEF <output id="relief-output" for="relief">55%</output></label><input id="relief" type="range" min="10" max="90" value="55"></div><button id="field-color" aria-pressed="false">Palette: Ember</button><button id="pause-field" aria-pressed="false">Pause field</button><span>CANVAS 2D<br>NO TEXTURES / NO SIMULATION CLAIM</span></div>
+    </section>
+  </main>
+  <footer class="gallery-footer"><span>Made by Astra with <b>Maharajahul Design</b>.</span><span>Fictional concepts · Original vector art · Works offline</span></footer>
+  <dialog id="detail-dialog" aria-labelledby="dialog-title"><button class="dialog-close" id="close-dialog" aria-label="Close dialog">×</button><p class="eyebrow" id="dialog-kicker"></p><h2 id="dialog-title"></h2><div id="dialog-body"></div></dialog>
+</body>
+</html>

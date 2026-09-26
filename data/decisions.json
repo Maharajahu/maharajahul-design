@@ -1,0 +1,350 @@
+{
+  "version": 1,
+  "surfaces": ["campaign", "application", "editorial", "immersive"],
+  "cards": [
+    {
+      "id": "offer-before-ornament",
+      "title": "Make the offer readable at first contact",
+      "tags": ["landing", "hero", "offer", "pricing", "conversion", "service"],
+      "surfaces": ["campaign"],
+      "decision": "Place the product, intended customer, and next action in one readable opening group. Let imagery explain a concrete attribute of the offer.",
+      "cost": "A short opening cannot carry every exception; place the important conditions where the decision is made.",
+      "check": "Read the opening without animation and identify what is offered and what the action does.",
+      "reference": "references/composition.md"
+    },
+    {
+      "id": "proof-at-the-question",
+      "title": "Put evidence beside the question it answers",
+      "tags": ["trust", "proof", "pricing", "comparison", "evidence", "claims"],
+      "surfaces": ["campaign", "editorial"],
+      "decision": "Attach real measurements, examples, or conditions to the claim they support. Keep the evidence interpretable without leaving the decision.",
+      "cost": "Large proof sections can interrupt reading; choose the evidence that changes the decision.",
+      "check": "Confirm the source, date, unit, and scope of each factual claim used.",
+      "reference": "references/composition.md"
+    },
+    {
+      "id": "operator-worklist",
+      "title": "Shape the screen around the next item of work",
+      "tags": ["dashboard", "queue", "operator", "worklist", "triage", "tickets"],
+      "surfaces": ["application"],
+      "decision": "Show actionable items with enough context to choose the next one. Keep the selection and its available actions close together.",
+      "cost": "A worklist emphasizes repeated tasks and may need a separate view for aggregate analysis.",
+      "check": "Complete one item, recover from one failure, and verify that the next item remains easy to find.",
+      "reference": "references/interaction.md"
+    },
+    {
+      "id": "table-with-context",
+      "title": "Preserve the identity of a dense table row",
+      "tags": ["table", "dense", "rows", "columns", "sort", "data"],
+      "surfaces": ["application"],
+      "decision": "Keep the identifier and decisive fields visible while less frequent attributes can be revealed. Align comparable values and preserve selection through sorting.",
+      "cost": "Hiding columns saves width but can obscure comparisons; expose a deliberate way to recover them.",
+      "check": "Inspect a long identifier, missing values, sorting, and keyboard movement at narrow width.",
+      "reference": "references/implementation.md"
+    },
+    {
+      "id": "chart-question",
+      "title": "Choose the encoding from the analytical question",
+      "tags": ["chart", "graph", "trend", "distribution", "ranking", "analytics"],
+      "surfaces": ["application", "editorial"],
+      "decision": "Name the relationship being examined, then choose the simplest encoding that makes that relationship visible.",
+      "cost": "An expressive visualization can make exact value lookup harder; keep the necessary values available.",
+      "check": "Ask a reader to answer the intended question using the shown units and time range.",
+      "reference": "references/composition.md"
+    },
+    {
+      "id": "absence-has-meaning",
+      "title": "Separate an absent measurement from a zero",
+      "tags": ["missing", "empty", "zero", "stale", "data", "offline"],
+      "surfaces": ["application", "editorial"],
+      "decision": "Represent unavailable, loading, stale, and zero values as distinct states when their meaning differs.",
+      "cost": "More states require concise labels; avoid making every cell an explanatory paragraph.",
+      "check": "Render each actual data state and verify that none implies a fabricated measurement.",
+      "reference": "references/implementation.md"
+    },
+    {
+      "id": "reading-with-landmarks",
+      "title": "Give long reading a stable route back",
+      "tags": ["article", "reading", "documentation", "editorial", "headings", "anchors"],
+      "surfaces": ["editorial"],
+      "decision": "Use meaningful headings, a comfortable reading measure, and navigation suited to the document's length.",
+      "cost": "Persistent navigation consumes width and may need to become an explicit control on a phone.",
+      "check": "Enter through a deep link, read a long section, and find the neighboring topic.",
+      "reference": "references/composition.md"
+    },
+    {
+      "id": "long-content-fit",
+      "title": "Design against the longest credible content",
+      "tags": ["title", "long", "localization", "translation", "wrapping", "typography"],
+      "surfaces": ["campaign", "application", "editorial", "immersive"],
+      "decision": "Test realistic long labels and titles before settling component heights or breakpoints. Let wrapping preserve meaning.",
+      "cost": "Variable height affects alignment; decide which comparisons need a shared baseline.",
+      "check": "Inspect long content with text scaling and without relying on a tooltip to reveal essential information.",
+      "reference": "references/composition.md"
+    },
+    {
+      "id": "type-role-sample",
+      "title": "Choose type using a sample of actual roles",
+      "tags": ["font", "type", "typography", "numerals", "labels", "language"],
+      "surfaces": ["campaign", "application", "editorial", "immersive"],
+      "decision": "Compare title, paragraph, label, and numeric samples in the actual language. Establish a small hierarchy before adding another face.",
+      "cost": "A distinctive display face can need a quieter companion for dense content.",
+      "check": "Inspect fallback fonts, loaded weights, punctuation, and aligned numbers.",
+      "reference": "references/composition.md"
+    },
+    {
+      "id": "accent-with-a-job",
+      "title": "Assign the strongest accent a specific job",
+      "tags": ["color", "palette", "accent", "contrast", "hierarchy", "theme"],
+      "surfaces": ["campaign", "application", "editorial", "immersive"],
+      "decision": "Reserve the strongest color relationship for the priority action or information. Give feedback states their own comprehensible treatment.",
+      "cost": "Accent restraint may require scale or placement to establish secondary hierarchy.",
+      "check": "Inspect the screen in each supported theme and verify status remains understandable without color.",
+      "reference": "references/composition.md"
+    },
+    {
+      "id": "icon-needs-a-verb",
+      "title": "Label an ambiguous icon action",
+      "tags": ["icons", "icon", "label", "toolbar", "action", "symbols"],
+      "surfaces": ["campaign", "application", "editorial", "immersive"],
+      "decision": "Use an action label when a symbol is not unambiguous in this product. Keep neighboring icons optically consistent.",
+      "cost": "Labels consume room; reduce low-priority actions before removing essential meaning.",
+      "check": "Identify each action without hovering and confirm the accessible name matches its effect.",
+      "reference": "references/composition.md"
+    },
+    {
+      "id": "phone-action-order",
+      "title": "Rebuild the phone order around the task",
+      "tags": ["mobile", "phone", "responsive", "breakpoint", "touch", "layout"],
+      "surfaces": ["campaign", "application", "editorial"],
+      "decision": "Place current context and the next action in a coherent phone sequence instead of preserving desktop column order automatically.",
+      "cost": "Different visual and document orders can confuse navigation; keep the semantic sequence intentional.",
+      "check": "Complete the primary path at phone width with the keyboard open when inputs are involved.",
+      "reference": "references/implementation.md"
+    },
+    {
+      "id": "resizable-panes",
+      "title": "Use additional space to reveal a related pane",
+      "tags": ["foldable", "tablet", "desktop", "resize", "panes", "adaptive"],
+      "surfaces": ["application"],
+      "decision": "Keep selection stable while moving between a single-pane and a related multi-pane view.",
+      "cost": "More visible context raises density; each pane still needs a clear role.",
+      "check": "Resize during an active selection and verify state, focus, and content continuity.",
+      "reference": "references/implementation.md"
+    },
+    {
+      "id": "focus-through-a-dialog",
+      "title": "Keep keyboard context through a modal",
+      "tags": ["keyboard", "focus", "modal", "dialog", "escape", "accessibility"],
+      "surfaces": ["application", "campaign"],
+      "decision": "Choose the initial focus, keep interaction within the modal boundary, and return focus to a useful place after dismissal.",
+      "cost": "The original trigger may disappear; define a sensible return target for that actual case.",
+      "check": "Open, traverse, dismiss, and reopen the dialog entirely by keyboard.",
+      "reference": "references/interaction.md"
+    },
+    {
+      "id": "recover-the-form",
+      "title": "Make a failed form preserve useful work",
+      "tags": ["form", "validation", "error", "recovery", "submit", "input"],
+      "surfaces": ["campaign", "application"],
+      "decision": "Keep valid values, identify the fields that need attention, and explain what changed after a failed submission.",
+      "cost": "Some sensitive fields cannot be retained; explain the real requirement where it matters.",
+      "check": "Submit invalid data, repair one field, retry, and inspect focus and repeated messages.",
+      "reference": "references/interaction.md"
+    },
+    {
+      "id": "reversible-change",
+      "title": "Match confirmation to real recovery",
+      "tags": ["delete", "undo", "confirmation", "destructive", "recovery"],
+      "surfaces": ["application"],
+      "decision": "Use an undo path when the operation is genuinely reversible; use an explicit confirmation when the consequence needs a decision beforehand.",
+      "cost": "An undo promise creates persistence and timing obligations.",
+      "check": "Perform the action and its advertised recovery on representative data.",
+      "reference": "references/interaction.md"
+    },
+    {
+      "id": "acknowledge-before-completion",
+      "title": "Acknowledge input while the result is pending",
+      "tags": ["loading", "pending", "feedback", "latency", "progress", "button"],
+      "surfaces": ["campaign", "application"],
+      "decision": "Show that input was received immediately, then communicate the result when it is known. Keep duplicate activation behavior deliberate.",
+      "cost": "Multiple feedback channels can become noisy; give each phase one clear signal.",
+      "check": "Try a slow response, a failure, and rapid repeated activation.",
+      "reference": "references/interaction.md"
+    },
+    {
+      "id": "interruptible-motion",
+      "title": "Make an animation survive a change of mind",
+      "tags": ["motion", "animation", "transition", "interrupt", "reverse", "timing"],
+      "surfaces": ["campaign", "application", "editorial", "immersive"],
+      "decision": "Define how motion settles when another action arrives before completion. Keep the underlying state authoritative.",
+      "cost": "Interruptible motion may need a simpler transition than a fixed cinematic sequence.",
+      "check": "Reverse, repeat, and navigate away during the animation.",
+      "reference": "references/interaction.md"
+    },
+    {
+      "id": "reduced-motion-equivalence",
+      "title": "Preserve the message when travel is removed",
+      "tags": ["reduced", "motion", "accessibility", "vestibular", "pause"],
+      "surfaces": ["campaign", "application", "editorial", "immersive"],
+      "decision": "Replace the movement with a readable state change while keeping the same information and controls available.",
+      "cost": "Some sequences need a separately composed static arrangement.",
+      "check": "Enable reduced motion and complete the same task without waiting on the removed animation.",
+      "reference": "references/interaction.md"
+    },
+    {
+      "id": "scroll-earns-distance",
+      "title": "Let each scroll segment reveal useful information",
+      "tags": ["scroll", "pinning", "story", "sequence", "parallax"],
+      "surfaces": ["campaign", "editorial", "immersive"],
+      "decision": "Connect the scroll distance to a readable content progression and retain ordinary navigation.",
+      "cost": "Long pinned sequences delay access to later content.",
+      "check": "Use keyboard navigation, a short viewport, and the static or reduced-motion view.",
+      "reference": "references/interaction.md"
+    },
+    {
+      "id": "recognizable-silhouette",
+      "title": "Make the object identifiable before adding surface detail",
+      "tags": ["boat", "hull", "geometry", "silhouette", "object", "3d", "scale"],
+      "surfaces": ["immersive"],
+      "decision": "Build the structural features the intended camera must read before spending detail on a material.",
+      "cost": "Silhouette detail may require geometry that cannot be replaced by a texture.",
+      "check": "Inspect an untextured view at the final camera distance and identify the object.",
+      "reference": "references/live-graphics.md"
+    },
+    {
+      "id": "shore-contact",
+      "title": "Tie shoreline foam to wave contact",
+      "tags": ["water", "sea", "ocean", "shoreline", "shore", "foam", "rocks", "waves"],
+      "surfaces": ["immersive"],
+      "decision": "Relate foam and wave behavior to shallows and obstacles, while preserving coherent movement from open water toward the coast.",
+      "cost": "An artistic depth or distance approximation needs tuning for the camera and shoreline.",
+      "check": "Watch a full wave cycle and verify that contact cues remain attached to the coast.",
+      "reference": "references/live-graphics.md"
+    },
+    {
+      "id": "shader-space-contract",
+      "title": "Make shader coordinate spaces agree",
+      "tags": ["shader", "normals", "glsl", "wgsl", "lighting", "space"],
+      "surfaces": ["immersive"],
+      "decision": "Track the space and units of positions, directions, and normals through the material and lighting calculation.",
+      "cost": "An extra transform can be correct but expensive; optimize only after the image is correct.",
+      "check": "Move the camera and object independently and inspect illumination and highlights.",
+      "reference": "references/live-graphics.md"
+    },
+    {
+      "id": "frame-cost-order",
+      "title": "Reduce the measured expensive part of the frame",
+      "tags": ["gpu", "webgpu", "performance", "frame", "resolution", "postprocessing"],
+      "surfaces": ["immersive"],
+      "decision": "Measure the complete frame, identify a costly pass, and reduce its unnecessary work before lowering every quality setting.",
+      "cost": "CPU and GPU timing tools expose different parts of latency; report the measurement boundary.",
+      "check": "Compare equivalent scenes, resolution, and hardware, then inspect the changed image.",
+      "reference": "references/live-graphics.md"
+    },
+    {
+      "id": "temporal-continuity",
+      "title": "Test the scene across time and interruption",
+      "tags": ["simulation", "temporal", "shimmer", "time", "pause", "buffers"],
+      "surfaces": ["immersive"],
+      "decision": "Give simulation steps and render frames explicit time ownership and limit catch-up after a pause.",
+      "cost": "A stable simulation can need interpolation or a lower update frequency.",
+      "check": "Pause, resume, resize, and move the camera while inspecting continuity.",
+      "reference": "references/live-graphics.md"
+    },
+    {
+      "id": "audio-has-headroom",
+      "title": "Map audio to a few legible visual roles",
+      "tags": ["audio", "reactive", "music", "envelope", "fft", "frequency"],
+      "surfaces": ["immersive"],
+      "decision": "Use measured bands or envelopes with deliberate smoothing and headroom for transient peaks.",
+      "cost": "Too many simultaneous mappings obscure cause and effect.",
+      "check": "Test silence, a sustained tone, rhythmic input, and abrupt peaks.",
+      "reference": "references/live-graphics.md"
+    },
+    {
+      "id": "asset-in-its-crop",
+      "title": "Judge an image inside its actual container",
+      "tags": ["image", "asset", "crop", "hero", "photography", "illustration"],
+      "surfaces": ["campaign", "application", "editorial", "immersive"],
+      "decision": "Design the focal point and negative space for the final placement, including its phone crop.",
+      "cost": "One source image may not support radically different aspect ratios.",
+      "check": "Inspect the actual crop beside its text at every required composition.",
+      "reference": "references/visual-assets.md"
+    },
+    {
+      "id": "video-readable-loop",
+      "title": "Compose moving media for the whole loop",
+      "tags": ["video", "loop", "poster", "background", "playback", "media"],
+      "surfaces": ["campaign", "editorial", "immersive"],
+      "decision": "Choose a useful poster and inspect the loop join, framing, and readability over moving frames.",
+      "cost": "Continuous playback consumes resources and can compete with the content.",
+      "check": "Inspect start, middle, end, loop join, and the state before playback is available.",
+      "reference": "references/visual-assets.md"
+    },
+    {
+      "id": "design-runtime-map",
+      "title": "Map a design component to the component that exists",
+      "tags": ["figma", "handoff", "tokens", "variants", "components", "mapping"],
+      "surfaces": ["campaign", "application", "editorial", "immersive"],
+      "decision": "Associate the relevant design properties and states with their actual runtime owners before implementing or exporting a mapping.",
+      "cost": "A visually similar component may have incompatible behavior.",
+      "check": "Exercise mapped variants and compare the implementation at the reference dimensions.",
+      "reference": "references/design-handoff.md"
+    },
+    {
+      "id": "native-lifecycle",
+      "title": "Let the owning view release its resources",
+      "tags": ["native", "lifecycle", "dispose", "listeners", "background", "state"],
+      "surfaces": ["application", "immersive"],
+      "decision": "Tie subscriptions, animation, and background work to the view or application state that owns them.",
+      "cost": "Shared resources need ownership broader than a single screen.",
+      "check": "Enter and leave the view repeatedly and observe pending work and retained resources.",
+      "reference": "references/implementation.md"
+    },
+    {
+      "id": "javafx-responsive-work",
+      "title": "Keep desktop work out of the interaction thread",
+      "tags": ["javafx", "desktop", "thread", "task", "table", "responsive"],
+      "surfaces": ["application"],
+      "decision": "Run expensive work away from the UI thread, then apply results through the framework's UI update mechanism.",
+      "cost": "Cancellation and a disappearing view require explicit result ownership.",
+      "check": "Interact and resize while the work runs, then close the owning view.",
+      "reference": "references/implementation.md"
+    },
+    {
+      "id": "observe-before-polish",
+      "title": "Attach a critique to an observed consequence",
+      "tags": ["review", "critique", "audit", "screenshots", "regression", "inspection"],
+      "surfaces": ["campaign", "application", "editorial", "immersive"],
+      "decision": "Point to the element or state causing confusion and describe how it affects reading or action before proposing a change.",
+      "cost": "A static capture cannot expose every interaction failure.",
+      "check": "Reproduce the relevant state and distinguish the defect from an optional stylistic alternative.",
+      "reference": "references/inspection.md"
+    }
+  ],
+  "stacks": {
+    "react": {"inspect": "Component state ownership and the rendered DOM.", "decide": "Keep the state driving an interaction with its actual owner.", "check": "Exercise rerenders, focus, and an asynchronous update.", "reference": "references/implementation.md"},
+    "nextjs": {"inspect": "Existing server/client boundaries and route behavior.", "decide": "Give client behavior to the interactive part that needs it.", "check": "Inspect initial rendering, hydration, and route transitions.", "reference": "references/implementation.md"},
+    "vue": {"inspect": "Reactive state, component bindings, and slots.", "decide": "Follow the component's actual data flow when presenting state.", "check": "Change the bound data and inspect the resulting DOM and focus.", "reference": "references/implementation.md"},
+    "svelte": {"inspect": "Version-specific state conventions and element ownership.", "decide": "Use framework-owned updates for elements managed by the framework.", "check": "Exercise state changes while a transition is active.", "reference": "references/implementation.md"},
+    "astro": {"inspect": "Static content and existing interactive islands.", "decide": "Hydrate only the surface whose behavior requires it.", "check": "Read and navigate before interaction code is ready.", "reference": "references/implementation.md"},
+    "nuxtjs": {"inspect": "Routes, server data, and shared reactive state.", "decide": "Retain useful content while refreshing route data.", "check": "Navigate between populated and empty states.", "reference": "references/implementation.md"},
+    "nuxt-ui": {"inspect": "Installed component APIs and theme configuration.", "decide": "Express design changes through supported variants and local slots.", "check": "Inspect generated semantics and keyboard behavior.", "reference": "references/implementation.md"},
+    "angular": {"inspect": "Form ownership, change detection, and shared components.", "decide": "Connect visible validation to the application's existing form state.", "check": "Submit, repair, and resubmit without losing valid input.", "reference": "references/implementation.md"},
+    "laravel": {"inspect": "Templates, server validation, and authorization boundaries.", "decide": "Keep entered values and actionable errors after a failed request.", "check": "Exercise the form with real server validation.", "reference": "references/implementation.md"},
+    "swiftui": {"inspect": "View identity, observable state, and navigation.", "decide": "Let stable application state survive view reconstruction.", "check": "Try Dynamic Type, navigation return, and lifecycle changes.", "reference": "references/implementation.md"},
+    "react-native": {"inspect": "Native input behavior, list rendering, and screen lifecycle.", "decide": "Keep keyboard and touch paths responsive under realistic data.", "check": "Open the keyboard, scroll a populated list, and return to the screen.", "reference": "references/implementation.md"},
+    "flutter": {"inspect": "Widget constraints, identity, and controller ownership.", "decide": "Model responsive relationships within actual layout constraints.", "check": "Scale text, resize, and dispose the owning screen.", "reference": "references/implementation.md"},
+    "jetpack-compose": {"inspect": "State hoisting, semantics, and lifecycle-aware work.", "decide": "Keep UI state and background results connected to the correct owner.", "check": "Inspect recomposition behavior and restored screen state.", "reference": "references/implementation.md"},
+    "html-tailwind": {"inspect": "Document order, local tokens, and installed utilities.", "decide": "Use semantic elements and derive layout from content relationships.", "check": "Verify focus, long text, and intermediate viewport widths.", "reference": "references/implementation.md"},
+    "shadcn": {"inspect": "The project's actual copied component implementations.", "decide": "Change shared behavior where that component owns it.", "check": "Exercise the edited component's visible and keyboard states.", "reference": "references/implementation.md"},
+    "threejs": {"inspect": "Camera, render loop, resource lifetime, and material conventions.", "decide": "Establish recognizable geometry and lighting before extra passes.", "check": "Inspect movement, resizing, exposure, and resource cleanup.", "reference": "references/live-graphics.md"},
+    "javafx": {"inspect": "Scene graph layout, observable properties, and UI-thread work.", "decide": "Keep long work cancellable and owned by the appropriate view.", "check": "Resize under load and inspect reused cells and keyboard navigation.", "reference": "references/implementation.md"},
+    "wpf": {"inspect": "Bindings, commands, dispatcher work, and data collection size.", "decide": "Connect UI state to the established binding and command model.", "check": "Inspect DPI changes, keyboard use, and a large collection.", "reference": "references/implementation.md"},
+    "winui": {"inspect": "Window model, adaptive panes, and focus navigation.", "decide": "Preserve selection while adapting the relationship between panes.", "check": "Resize the window and inspect focus and scaling.", "reference": "references/implementation.md"},
+    "avalonia": {"inspect": "Target platforms, resource lookup, bindings, and input conventions.", "decide": "Keep shared intent while respecting each target's behavior.", "check": "Exercise the relevant platform rather than relying only on compilation.", "reference": "references/implementation.md"},
+    "uno": {"inspect": "Target platform differences and the shared view model.", "decide": "Keep responsive behavior compatible with the actual target controls.", "check": "Run the affected screen on the intended platform.", "reference": "references/implementation.md"},
+    "uwp": {"inspect": "Application lifecycle, adaptive layout, and focus behavior.", "decide": "Preserve meaningful screen state through lifecycle changes.", "check": "Inspect scaling, keyboard use, and resumed state.", "reference": "references/implementation.md"}
+  }
+}
