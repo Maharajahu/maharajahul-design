@@ -18,6 +18,12 @@ Record only the mappings needed for the task:
 These are examples, not a rule that a design file always takes precedence.
 Resolve disagreements using the user's brief and the product's actual contract.
 
+Use the available integration's own prerequisite for the requested operation:
+node inspection, creating a file, design-to-code, library generation, component
+mapping and motion editing are distinct workflows. Do not create or publish a
+design file merely because the task mentions Figma. If no integration is
+available, inspect supplied exports and code; do not pretend a remote edit ran.
+
 ## From Figma to implementation
 
 Inspect the relevant frame, components, variables, and assets through the
@@ -52,3 +58,20 @@ Verify that an edit did not detach variants or break a mapped component.
 Report the actual design artifact and the corresponding implemented surface.
 If the integration is unavailable, deliver the mapping and clearly identify
 which design-file actions were not performed.
+
+## A usable library and mapping recipe
+
+Inventory the real component API, token aliases and representative states.
+Translate supported props into design properties; exclude combinations the
+runtime cannot render. An apparently identical component can have different
+keyboard or selection behavior, so map semantics as well as appearance.
+
+Validate one instance end to end before repeating mappings: selected design
+variant → generated import and props → actual runtime component → rendered
+state. Record code-only behavior such as virtualization or permission logic
+instead of fabricating a design variant for it. A library update must preserve
+the project's existing identifiers and references where consumers rely on them.
+
+For motion handoff include duration/easing intent, origin, interruption and
+responsive differences, not just the final pose. Do not import a fixed prototype
+timeline as application state when real input can interrupt the sequence.

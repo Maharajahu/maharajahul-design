@@ -33,6 +33,34 @@ font readiness, and animation phase. Keep dynamic regions controlled or explain
 why they differ. An image difference is evidence to inspect, not automatically
 a regression.
 
+## Repair priority and cause
+
+Resolve blocked tasks, data loss, misleading state and unreachable controls
+before cosmetic inconsistency. Next address missing recovery and broken
+responsive relationships; then type, spacing, motion and asset coherence.
+Find the owner of the defect: shared token, component usage, state model or
+local layout. A polish request does not authorize replacing the whole visual
+direction or cleaning unrelated code.
+
+## Accessibility and performance checks that change the result
+
+Test visible/unobscured focus, dialog focus return, labels and error association,
+announcements of meaningful changes, zoom/reflow and touch reachability. Include
+one long-content or translated state where it can alter layout. Automated
+accessibility rules provide partial coverage, not proof of assistive usability.
+
+For performance, identify asset transfer, layout, script, rendering or retained
+resources before choosing an optimization. Inspect the initial path without
+optional heavy code, interaction during work and repeated entry/exit. A lower
+GPU resolution does not cure CPU-bound layout, and a fast desktop screenshot
+does not establish a mobile frame budget.
+
+For image baselines, fix relevant data, locale, clock, browser, fonts, viewport
+and animation phase. Wait for a meaningful ready state, not a long sleep. Mask
+only intentionally unstable content and inspect the actual differences before
+accepting a baseline. Native applications need their platform's capture/input
+tools, not this browser helper.
+
 ## Optional browser capture helper
 
 Use an existing project installation of Playwright with its Chromium browser.

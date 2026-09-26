@@ -1,9 +1,209 @@
 {
   "version": 1,
   "surfaces": ["campaign", "application", "editorial", "immersive"],
+  "domains": ["product", "style", "color", "typography", "chart", "ux", "landing", "icons", "motion", "react", "web", "graphics", "native", "handoff", "assets", "inspection"],
   "cards": [
     {
+      "id": "recipe-liquid-glass",
+      "domains": ["style", "graphics", "web"],
+      "title": "Build liquid glass from a rounded lens field",
+      "tags": ["liquid", "glass", "refraction", "frosted", "lens", "lucent"],
+      "surfaces": ["application", "immersive"],
+      "decision": "Map DOM rectangles into the drawing buffer, bend the procedural background at each rounded edge, and keep text in native controls above the shader.",
+      "cost": "This scene refracts its own generated background, not arbitrary HTML beneath it.",
+      "check": "Resize, switch all three finishes, move daylight, and inspect readable controls at phone size.",
+      "reference": "references/recipes/liquid-glass.md",
+      "example": "samples/future/index.html#lucent"
+    },
+    {
+      "id": "recipe-orbital-planet",
+      "domains": ["graphics", "style"],
+      "title": "Construct an orbital planet with coherent light",
+      "tags": ["planet", "orbital", "atmosphere", "clouds", "rings", "orbis"],
+      "surfaces": ["campaign", "immersive"],
+      "decision": "Solve the sphere hit first; layer terrain, sun-facing light, cloud shadows and a separate ring plane around the same geometry.",
+      "cost": "Procedural detail and atmosphere are artistic approximations rather than a planetary simulation.",
+      "check": "Turn the sun and verify the terminator, night lights, cloud depth and ring occlusion remain consistent.",
+      "reference": "references/recipes/orbital-planet.md",
+      "example": "samples/future/index.html#orbis"
+    },
+    {
+      "id": "recipe-liquid-metal",
+      "domains": ["graphics", "style"],
+      "title": "Shape liquid metal with a warped distance field",
+      "tags": ["metal", "liquid", "chrome", "torus", "sculpture", "morph"],
+      "surfaces": ["campaign", "immersive"],
+      "decision": "March a twisted torus with bounded steps, derive its normal from the same field, then reflect a controlled studio environment.",
+      "cost": "It is a deforming implicit surface, not a fluid solver or measured metal material.",
+      "check": "Inspect silhouette and reflections over a full motion cycle and at both control extremes.",
+      "reference": "references/recipes/liquid-metal.md",
+      "example": "samples/future/index.html#morph"
+    },
+    {
+      "id": "recipe-spectral-crystal",
+      "domains": ["graphics", "style"],
+      "title": "Give a spectral crystal a visible interior",
+      "tags": ["crystal", "spectral", "dispersion", "absorption", "optics", "chroma"],
+      "surfaces": ["campaign", "immersive"],
+      "decision": "Combine entry normals, a bounded interior path, thickness attenuation and restrained channel separation.",
+      "cost": "The stylized interior march does not solve every refracted path or total internal reflection.",
+      "check": "Compare thin edges with the thick center, and distinguish a missed exit from a legitimate dark region.",
+      "reference": "references/recipes/spectral-crystal.md",
+      "example": "samples/future/index.html#chroma"
+    },
+    {
+      "id": "recipe-spatial-network",
+      "domains": ["graphics", "chart"],
+      "title": "Project a spatial node network onto Canvas",
+      "tags": ["spatial", "network", "nodes", "lattice", "signals", "synapse"],
+      "surfaces": ["application", "immersive"],
+      "decision": "Create a fixed lattice and neighbor edges, rotate and project once per node, depth-sort, then move a signal along projected edges.",
+      "cost": "The sample is a decorative lattice; real network data needs a truthful graph model and labels.",
+      "check": "Change connectivity and send a signal without losing depth or creating a new graph every frame.",
+      "reference": "references/recipes/spatial-network.md",
+      "example": "samples/future/index.html#synapse"
+    },
+    {
+      "id": "recipe-kinetic-tunnel",
+      "domains": ["graphics", "motion"],
+      "title": "Build a kinetic tunnel from radial depth",
+      "tags": ["kinetic", "tunnel", "corridor", "hyperspace", "rails", "velocity"],
+      "surfaces": ["immersive"],
+      "decision": "Convert a polygonal radial field to bounded depth, then use repeating phase for rings and angle for light rails.",
+      "cost": "The perspective impression is screen-space and high-speed contrast can be uncomfortable.",
+      "check": "Keep the center finite and make reduced motion retain a complete static scene.",
+      "reference": "references/recipes/kinetic-tunnel.md",
+      "example": "samples/future/index.html#velocity"
+    },
+    {
+      "id": "recipe-editorial-spread",
+      "domains": ["style", "typography", "web"],
+      "title": "Build an editorial spread with a reading layer",
+      "tags": ["editorial", "spread", "article", "story", "illustrated", "edition"],
+      "surfaces": ["editorial", "campaign"],
+      "decision": "Pair a restrained text column with an authored SVG, then open long-form content in a native reading dialog.",
+      "cost": "The composition needs real story hierarchy and a deliberate phone crop, not just a serif font.",
+      "check": "Read long paragraphs at narrow width and close the story back to its trigger.",
+      "reference": "references/recipes/editorial-spread.md",
+      "example": "samples/index.html#edition"
+    },
+    {
+      "id": "recipe-energy-dashboard",
+      "domains": ["chart", "product", "web"],
+      "title": "Keep an energy dashboard and its totals synchronized",
+      "tags": ["energy", "dashboard", "period", "totals", "pulse"],
+      "surfaces": ["application"],
+      "decision": "Drive the chart, total and peak from one selected interval series and derive all summaries from it.",
+      "cost": "Illustrative battery and device state are not live telemetry or backend controls.",
+      "check": "Switch periods and independently sum the displayed buckets; label units and sample data.",
+      "reference": "references/recipes/energy-dashboard.md",
+      "example": "samples/index.html#pulse"
+    },
+    {
+      "id": "recipe-product-configurator",
+      "domains": ["product", "landing", "web"],
+      "title": "Connect a product configurator to a live material preview",
+      "tags": ["product", "configurator", "finish", "lamp", "brightness", "selection"],
+      "surfaces": ["campaign", "application"],
+      "decision": "Use one selected finish and light level to update SVG materials, labels and the review summary.",
+      "cost": "A selection preview does not implement a cart, payment or real pricing authority.",
+      "check": "Change each option with keyboard and confirm the summary reflects the current state.",
+      "reference": "references/recipes/product-configurator.md",
+      "example": "samples/index.html#form"
+    },
+    {
+      "id": "recipe-timeline-workspace",
+      "domains": ["product", "motion", "web"],
+      "title": "Give a timeline workspace one transport clock",
+      "tags": ["timeline", "workspace", "playhead", "clips", "transport", "cutroom"],
+      "surfaces": ["application"],
+      "decision": "Derive active clip, playhead, time label and SVG preview from one bounded sequence position.",
+      "cost": "The demo previews four vector scenes; it is not a media encoder or a nonlinear video engine.",
+      "check": "Seek across each clip boundary, pause, resume and reach the exact sequence end.",
+      "reference": "references/recipes/timeline-workspace.md",
+      "example": "samples/index.html#cutroom"
+    },
+    {
+      "id": "recipe-contour-landscape",
+      "domains": ["graphics", "motion"],
+      "title": "Draw a contour landscape from a bounded height field",
+      "tags": ["contour", "landscape", "terrain", "lines", "relief", "drift"],
+      "surfaces": ["immersive", "editorial"],
+      "decision": "Sample layered curves from one sine-and-Gaussian field; let relief change amplitude while depth controls spacing.",
+      "cost": "A Canvas contour impression does not provide a 3D terrain mesh or physical topography.",
+      "check": "Compare zero relief, both slider endpoints, pause and resize without non-finite coordinates.",
+      "reference": "references/recipes/contour-landscape.md",
+      "example": "samples/index.html#drift"
+    },
+    {
+      "id": "gpu-ping-pong",
+      "domains": ["graphics"],
+      "title": "Give GPU simulation an explicit previous and next state",
+      "tags": ["webgpu", "compute", "particles", "wgsl", "alignment", "ping", "pong"],
+      "surfaces": ["immersive", "application"],
+      "decision": "Lay out host and shader bytes together, alternate read/write storage buffers, and advance fixed simulation steps before rendering.",
+      "cost": "Device loss invalidates all resources; mapping results to the CPU each frame can erase the compute benefit.",
+      "check": "Dispatch a non-multiple of the workgroup size, pause, resize and rebuild after resource loss.",
+      "reference": "references/gpu-pipelines.md"
+    },
+    {
+      "id": "audio-envelope-recipe",
+      "domains": ["graphics", "motion", "assets"],
+      "title": "Turn audio transients into controlled visual energy",
+      "tags": ["audio", "fft", "reactive", "envelope", "attack", "release", "music"],
+      "surfaces": ["immersive"],
+      "decision": "Smooth a normalized feature with separate attack and release constants, then map the bounded envelope to one visual parameter.",
+      "cost": "Raw frequency bins and frame-dependent smoothing produce noisy or device-dependent motion.",
+      "check": "Compare the same signal at two frame rates and verify silence returns to the idle composition.",
+      "reference": "references/gpu-pipelines.md"
+    },
+    {
+      "id": "motion-recipes",
+      "domains": ["motion", "ux", "web"],
+      "title": "Implement interruptible motion with a single property owner",
+      "tags": ["motion", "animation", "flip", "gsap", "waapi", "stagger", "scroll"],
+      "surfaces": ["application", "campaign", "editorial", "immersive"],
+      "decision": "Select a state transition, reorder or scroll pattern; define its interrupt and reduced-motion state before adding choreography.",
+      "cost": "Multiple timelines writing the same transform can make state and presentation disagree.",
+      "check": "Reverse input mid-transition, resize, and navigate away before completion.",
+      "reference": "references/motion-recipes.md"
+    },
+    {
+      "id": "react-request-race",
+      "domains": ["react", "web"],
+      "title": "Keep stale requests from replacing current results",
+      "tags": ["react", "nextjs", "search", "race", "fetch", "hydration", "performance"],
+      "surfaces": ["application"],
+      "decision": "Derive local values during render; give async work cancellation or identity tied to the current query and screen.",
+      "cost": "Moving everything into client effects can lose initial content and duplicate server work.",
+      "check": "Resolve two queries in reverse order and navigate away while the slower request is pending.",
+      "reference": "references/web-patterns.md"
+    },
+    {
+      "id": "native-adaptive-state",
+      "domains": ["native", "ux"],
+      "title": "Preserve selection when a native interface changes panes",
+      "tags": ["native", "swiftui", "compose", "flutter", "foldable", "adaptive", "restoration"],
+      "surfaces": ["application"],
+      "decision": "Store selection and navigation with their durable owner; derive compact or expanded presentation from current constraints.",
+      "cost": "A recreated view may lose draft content or run duplicate lifecycle work if it owns persistent state.",
+      "check": "Resize, return from background and scale text without losing selection or making controls unreachable.",
+      "reference": "references/native-patterns.md"
+    },
+    {
+      "id": "desktop-command-ownership",
+      "domains": ["native", "ux"],
+      "title": "Share one command path across desktop controls",
+      "tags": ["desktop", "javafx", "editor", "commands", "undo", "cells", "media", "packaging"],
+      "surfaces": ["application"],
+      "decision": "Let menus, shortcuts and toolbars invoke the same command; separate document state from reusable cells and disposable views.",
+      "cost": "Independent click handlers can bypass validation, dirty-state or undo semantics.",
+      "check": "Invoke through keyboard and toolbar, recycle a cell, cancel background work and launch the packaged artifact.",
+      "reference": "references/desktop-patterns.md"
+    },
+    {
       "id": "offer-before-ornament",
+      "domains": ["product", "landing"],
       "title": "Make the offer readable at first contact",
       "tags": ["landing", "hero", "offer", "pricing", "conversion", "service"],
       "surfaces": ["campaign"],
@@ -14,6 +214,7 @@
     },
     {
       "id": "proof-at-the-question",
+      "domains": ["product", "landing"],
       "title": "Put evidence beside the question it answers",
       "tags": ["trust", "proof", "pricing", "comparison", "evidence", "claims"],
       "surfaces": ["campaign", "editorial"],
@@ -24,6 +225,7 @@
     },
     {
       "id": "operator-worklist",
+      "domains": ["product", "ux"],
       "title": "Shape the screen around the next item of work",
       "tags": ["dashboard", "queue", "operator", "worklist", "triage", "tickets"],
       "surfaces": ["application"],
@@ -34,6 +236,7 @@
     },
     {
       "id": "table-with-context",
+      "domains": ["chart", "web", "ux"],
       "title": "Preserve the identity of a dense table row",
       "tags": ["table", "dense", "rows", "columns", "sort", "data"],
       "surfaces": ["application"],
@@ -44,6 +247,7 @@
     },
     {
       "id": "chart-question",
+      "domains": ["chart"],
       "title": "Choose the encoding from the analytical question",
       "tags": ["chart", "graph", "trend", "distribution", "ranking", "analytics"],
       "surfaces": ["application", "editorial"],
@@ -54,6 +258,7 @@
     },
     {
       "id": "absence-has-meaning",
+      "domains": ["chart", "ux"],
       "title": "Separate an absent measurement from a zero",
       "tags": ["missing", "empty", "zero", "stale", "data", "offline"],
       "surfaces": ["application", "editorial"],
@@ -64,6 +269,7 @@
     },
     {
       "id": "reading-with-landmarks",
+      "domains": ["typography", "web"],
       "title": "Give long reading a stable route back",
       "tags": ["article", "reading", "documentation", "editorial", "headings", "anchors"],
       "surfaces": ["editorial"],
@@ -74,6 +280,7 @@
     },
     {
       "id": "long-content-fit",
+      "domains": ["typography", "ux"],
       "title": "Design against the longest credible content",
       "tags": ["title", "long", "localization", "translation", "wrapping", "typography"],
       "surfaces": ["campaign", "application", "editorial", "immersive"],
@@ -84,6 +291,7 @@
     },
     {
       "id": "type-role-sample",
+      "domains": ["typography"],
       "title": "Choose type using a sample of actual roles",
       "tags": ["font", "type", "typography", "numerals", "labels", "language"],
       "surfaces": ["campaign", "application", "editorial", "immersive"],
@@ -94,6 +302,7 @@
     },
     {
       "id": "accent-with-a-job",
+      "domains": ["color", "style"],
       "title": "Assign the strongest accent a specific job",
       "tags": ["color", "palette", "accent", "contrast", "hierarchy", "theme"],
       "surfaces": ["campaign", "application", "editorial", "immersive"],
@@ -104,6 +313,7 @@
     },
     {
       "id": "icon-needs-a-verb",
+      "domains": ["icons", "ux"],
       "title": "Label an ambiguous icon action",
       "tags": ["icons", "icon", "label", "toolbar", "action", "symbols"],
       "surfaces": ["campaign", "application", "editorial", "immersive"],
@@ -114,6 +324,7 @@
     },
     {
       "id": "phone-action-order",
+      "domains": ["ux", "web"],
       "title": "Rebuild the phone order around the task",
       "tags": ["mobile", "phone", "responsive", "breakpoint", "touch", "layout"],
       "surfaces": ["campaign", "application", "editorial"],
@@ -124,6 +335,7 @@
     },
     {
       "id": "resizable-panes",
+      "domains": ["native", "ux"],
       "title": "Use additional space to reveal a related pane",
       "tags": ["foldable", "tablet", "desktop", "resize", "panes", "adaptive"],
       "surfaces": ["application"],
@@ -134,6 +346,7 @@
     },
     {
       "id": "focus-through-a-dialog",
+      "domains": ["ux", "web"],
       "title": "Keep keyboard context through a modal",
       "tags": ["keyboard", "focus", "modal", "dialog", "escape", "accessibility"],
       "surfaces": ["application", "campaign"],
@@ -144,6 +357,7 @@
     },
     {
       "id": "recover-the-form",
+      "domains": ["ux", "web"],
       "title": "Make a failed form preserve useful work",
       "tags": ["form", "validation", "error", "recovery", "submit", "input"],
       "surfaces": ["campaign", "application"],
@@ -154,6 +368,7 @@
     },
     {
       "id": "reversible-change",
+      "domains": ["ux"],
       "title": "Match confirmation to real recovery",
       "tags": ["delete", "undo", "confirmation", "destructive", "recovery"],
       "surfaces": ["application"],
@@ -164,6 +379,7 @@
     },
     {
       "id": "acknowledge-before-completion",
+      "domains": ["ux", "motion"],
       "title": "Acknowledge input while the result is pending",
       "tags": ["loading", "pending", "feedback", "latency", "progress", "button"],
       "surfaces": ["campaign", "application"],
@@ -174,6 +390,7 @@
     },
     {
       "id": "interruptible-motion",
+      "domains": ["motion"],
       "title": "Make an animation survive a change of mind",
       "tags": ["motion", "animation", "transition", "interrupt", "reverse", "timing"],
       "surfaces": ["campaign", "application", "editorial", "immersive"],
@@ -184,6 +401,7 @@
     },
     {
       "id": "reduced-motion-equivalence",
+      "domains": ["motion", "ux"],
       "title": "Preserve the message when travel is removed",
       "tags": ["reduced", "motion", "accessibility", "vestibular", "pause"],
       "surfaces": ["campaign", "application", "editorial", "immersive"],
@@ -194,6 +412,7 @@
     },
     {
       "id": "scroll-earns-distance",
+      "domains": ["motion", "landing"],
       "title": "Let each scroll segment reveal useful information",
       "tags": ["scroll", "pinning", "story", "sequence", "parallax"],
       "surfaces": ["campaign", "editorial", "immersive"],
@@ -204,6 +423,7 @@
     },
     {
       "id": "recognizable-silhouette",
+      "domains": ["graphics"],
       "title": "Make the object identifiable before adding surface detail",
       "tags": ["boat", "hull", "geometry", "silhouette", "object", "3d", "scale"],
       "surfaces": ["immersive"],
@@ -214,6 +434,7 @@
     },
     {
       "id": "shore-contact",
+      "domains": ["graphics"],
       "title": "Tie shoreline foam to wave contact",
       "tags": ["water", "sea", "ocean", "shoreline", "shore", "foam", "rocks", "waves"],
       "surfaces": ["immersive"],
@@ -224,6 +445,7 @@
     },
     {
       "id": "shader-space-contract",
+      "domains": ["graphics"],
       "title": "Make shader coordinate spaces agree",
       "tags": ["shader", "normals", "glsl", "wgsl", "lighting", "space"],
       "surfaces": ["immersive"],
@@ -234,6 +456,7 @@
     },
     {
       "id": "frame-cost-order",
+      "domains": ["graphics"],
       "title": "Reduce the measured expensive part of the frame",
       "tags": ["gpu", "webgpu", "performance", "frame", "resolution", "postprocessing"],
       "surfaces": ["immersive"],
@@ -244,6 +467,7 @@
     },
     {
       "id": "temporal-continuity",
+      "domains": ["graphics", "motion"],
       "title": "Test the scene across time and interruption",
       "tags": ["simulation", "temporal", "shimmer", "time", "pause", "buffers"],
       "surfaces": ["immersive"],
@@ -254,6 +478,7 @@
     },
     {
       "id": "audio-has-headroom",
+      "domains": ["graphics", "motion"],
       "title": "Map audio to a few legible visual roles",
       "tags": ["audio", "reactive", "music", "envelope", "fft", "frequency"],
       "surfaces": ["immersive"],
@@ -264,6 +489,7 @@
     },
     {
       "id": "asset-in-its-crop",
+      "domains": ["assets", "landing"],
       "title": "Judge an image inside its actual container",
       "tags": ["image", "asset", "crop", "hero", "photography", "illustration"],
       "surfaces": ["campaign", "application", "editorial", "immersive"],
@@ -274,6 +500,7 @@
     },
     {
       "id": "video-readable-loop",
+      "domains": ["assets", "motion"],
       "title": "Compose moving media for the whole loop",
       "tags": ["video", "loop", "poster", "background", "playback", "media"],
       "surfaces": ["campaign", "editorial", "immersive"],
@@ -284,6 +511,7 @@
     },
     {
       "id": "design-runtime-map",
+      "domains": ["handoff"],
       "title": "Map a design component to the component that exists",
       "tags": ["figma", "handoff", "tokens", "variants", "components", "mapping"],
       "surfaces": ["campaign", "application", "editorial", "immersive"],
@@ -294,6 +522,7 @@
     },
     {
       "id": "native-lifecycle",
+      "domains": ["native"],
       "title": "Let the owning view release its resources",
       "tags": ["native", "lifecycle", "dispose", "listeners", "background", "state"],
       "surfaces": ["application", "immersive"],
@@ -304,6 +533,7 @@
     },
     {
       "id": "javafx-responsive-work",
+      "domains": ["native"],
       "title": "Keep desktop work out of the interaction thread",
       "tags": ["javafx", "desktop", "thread", "task", "table", "responsive"],
       "surfaces": ["application"],
@@ -314,6 +544,7 @@
     },
     {
       "id": "observe-before-polish",
+      "domains": ["inspection"],
       "title": "Attach a critique to an observed consequence",
       "tags": ["review", "critique", "audit", "screenshots", "regression", "inspection"],
       "surfaces": ["campaign", "application", "editorial", "immersive"],
@@ -324,27 +555,27 @@
     }
   ],
   "stacks": {
-    "react": {"inspect": "Component state ownership and the rendered DOM.", "decide": "Keep the state driving an interaction with its actual owner.", "check": "Exercise rerenders, focus, and an asynchronous update.", "reference": "references/implementation.md"},
-    "nextjs": {"inspect": "Existing server/client boundaries and route behavior.", "decide": "Give client behavior to the interactive part that needs it.", "check": "Inspect initial rendering, hydration, and route transitions.", "reference": "references/implementation.md"},
-    "vue": {"inspect": "Reactive state, component bindings, and slots.", "decide": "Follow the component's actual data flow when presenting state.", "check": "Change the bound data and inspect the resulting DOM and focus.", "reference": "references/implementation.md"},
-    "svelte": {"inspect": "Version-specific state conventions and element ownership.", "decide": "Use framework-owned updates for elements managed by the framework.", "check": "Exercise state changes while a transition is active.", "reference": "references/implementation.md"},
-    "astro": {"inspect": "Static content and existing interactive islands.", "decide": "Hydrate only the surface whose behavior requires it.", "check": "Read and navigate before interaction code is ready.", "reference": "references/implementation.md"},
-    "nuxtjs": {"inspect": "Routes, server data, and shared reactive state.", "decide": "Retain useful content while refreshing route data.", "check": "Navigate between populated and empty states.", "reference": "references/implementation.md"},
-    "nuxt-ui": {"inspect": "Installed component APIs and theme configuration.", "decide": "Express design changes through supported variants and local slots.", "check": "Inspect generated semantics and keyboard behavior.", "reference": "references/implementation.md"},
-    "angular": {"inspect": "Form ownership, change detection, and shared components.", "decide": "Connect visible validation to the application's existing form state.", "check": "Submit, repair, and resubmit without losing valid input.", "reference": "references/implementation.md"},
-    "laravel": {"inspect": "Templates, server validation, and authorization boundaries.", "decide": "Keep entered values and actionable errors after a failed request.", "check": "Exercise the form with real server validation.", "reference": "references/implementation.md"},
-    "swiftui": {"inspect": "View identity, observable state, and navigation.", "decide": "Let stable application state survive view reconstruction.", "check": "Try Dynamic Type, navigation return, and lifecycle changes.", "reference": "references/implementation.md"},
-    "react-native": {"inspect": "Native input behavior, list rendering, and screen lifecycle.", "decide": "Keep keyboard and touch paths responsive under realistic data.", "check": "Open the keyboard, scroll a populated list, and return to the screen.", "reference": "references/implementation.md"},
-    "flutter": {"inspect": "Widget constraints, identity, and controller ownership.", "decide": "Model responsive relationships within actual layout constraints.", "check": "Scale text, resize, and dispose the owning screen.", "reference": "references/implementation.md"},
-    "jetpack-compose": {"inspect": "State hoisting, semantics, and lifecycle-aware work.", "decide": "Keep UI state and background results connected to the correct owner.", "check": "Inspect recomposition behavior and restored screen state.", "reference": "references/implementation.md"},
-    "html-tailwind": {"inspect": "Document order, local tokens, and installed utilities.", "decide": "Use semantic elements and derive layout from content relationships.", "check": "Verify focus, long text, and intermediate viewport widths.", "reference": "references/implementation.md"},
-    "shadcn": {"inspect": "The project's actual copied component implementations.", "decide": "Change shared behavior where that component owns it.", "check": "Exercise the edited component's visible and keyboard states.", "reference": "references/implementation.md"},
+    "react": {"inspect": "Component state ownership and the rendered DOM.", "decide": "Keep the state driving an interaction with its actual owner.", "check": "Exercise rerenders, focus, and an asynchronous update.", "reference": "references/web-patterns.md"},
+    "nextjs": {"inspect": "Existing server/client boundaries and route behavior.", "decide": "Give client behavior to the interactive part that needs it.", "check": "Inspect initial rendering, hydration, and route transitions.", "reference": "references/web-patterns.md"},
+    "vue": {"inspect": "Reactive state, component bindings, and slots.", "decide": "Follow the component's actual data flow when presenting state.", "check": "Change the bound data and inspect the resulting DOM and focus.", "reference": "references/web-patterns.md"},
+    "svelte": {"inspect": "Version-specific state conventions and element ownership.", "decide": "Use framework-owned updates for elements managed by the framework.", "check": "Exercise state changes while a transition is active.", "reference": "references/web-patterns.md"},
+    "astro": {"inspect": "Static content and existing interactive islands.", "decide": "Hydrate only the surface whose behavior requires it.", "check": "Read and navigate before interaction code is ready.", "reference": "references/web-patterns.md"},
+    "nuxtjs": {"inspect": "Routes, server data, and shared reactive state.", "decide": "Retain useful content while refreshing route data.", "check": "Navigate between populated and empty states.", "reference": "references/web-patterns.md"},
+    "nuxt-ui": {"inspect": "Installed component APIs and theme configuration.", "decide": "Express design changes through supported variants and local slots.", "check": "Inspect generated semantics and keyboard behavior.", "reference": "references/web-patterns.md"},
+    "angular": {"inspect": "Form ownership, change detection, and shared components.", "decide": "Connect visible validation to the application's existing form state.", "check": "Submit, repair, and resubmit without losing valid input.", "reference": "references/web-patterns.md"},
+    "laravel": {"inspect": "Templates, server validation, and authorization boundaries.", "decide": "Keep entered values and actionable errors after a failed request.", "check": "Exercise the form with real server validation.", "reference": "references/web-patterns.md"},
+    "swiftui": {"inspect": "View identity, observable state, and navigation.", "decide": "Let stable application state survive view reconstruction.", "check": "Try Dynamic Type, navigation return, and lifecycle changes.", "reference": "references/native-patterns.md"},
+    "react-native": {"inspect": "Native input behavior, list rendering, and screen lifecycle.", "decide": "Keep keyboard and touch paths responsive under realistic data.", "check": "Open the keyboard, scroll a populated list, and return to the screen.", "reference": "references/native-patterns.md"},
+    "flutter": {"inspect": "Widget constraints, identity, and controller ownership.", "decide": "Model responsive relationships within actual layout constraints.", "check": "Scale text, resize, and dispose the owning screen.", "reference": "references/native-patterns.md"},
+    "jetpack-compose": {"inspect": "State hoisting, semantics, and lifecycle-aware work.", "decide": "Keep UI state and background results connected to the correct owner.", "check": "Inspect recomposition behavior and restored screen state.", "reference": "references/native-patterns.md"},
+    "html-tailwind": {"inspect": "Document order, local tokens, and installed utilities.", "decide": "Use semantic elements and derive layout from content relationships.", "check": "Verify focus, long text, and intermediate viewport widths.", "reference": "references/web-patterns.md"},
+    "shadcn": {"inspect": "The project's actual copied component implementations.", "decide": "Change shared behavior where that component owns it.", "check": "Exercise the edited component's visible and keyboard states.", "reference": "references/web-patterns.md"},
     "threejs": {"inspect": "Camera, render loop, resource lifetime, and material conventions.", "decide": "Establish recognizable geometry and lighting before extra passes.", "check": "Inspect movement, resizing, exposure, and resource cleanup.", "reference": "references/live-graphics.md"},
-    "javafx": {"inspect": "Scene graph layout, observable properties, and UI-thread work.", "decide": "Keep long work cancellable and owned by the appropriate view.", "check": "Resize under load and inspect reused cells and keyboard navigation.", "reference": "references/implementation.md"},
-    "wpf": {"inspect": "Bindings, commands, dispatcher work, and data collection size.", "decide": "Connect UI state to the established binding and command model.", "check": "Inspect DPI changes, keyboard use, and a large collection.", "reference": "references/implementation.md"},
-    "winui": {"inspect": "Window model, adaptive panes, and focus navigation.", "decide": "Preserve selection while adapting the relationship between panes.", "check": "Resize the window and inspect focus and scaling.", "reference": "references/implementation.md"},
-    "avalonia": {"inspect": "Target platforms, resource lookup, bindings, and input conventions.", "decide": "Keep shared intent while respecting each target's behavior.", "check": "Exercise the relevant platform rather than relying only on compilation.", "reference": "references/implementation.md"},
-    "uno": {"inspect": "Target platform differences and the shared view model.", "decide": "Keep responsive behavior compatible with the actual target controls.", "check": "Run the affected screen on the intended platform.", "reference": "references/implementation.md"},
-    "uwp": {"inspect": "Application lifecycle, adaptive layout, and focus behavior.", "decide": "Preserve meaningful screen state through lifecycle changes.", "check": "Inspect scaling, keyboard use, and resumed state.", "reference": "references/implementation.md"}
+    "javafx": {"inspect": "Scene graph layout, observable properties, and UI-thread work.", "decide": "Keep long work cancellable and owned by the appropriate view.", "check": "Resize under load and inspect reused cells and keyboard navigation.", "reference": "references/desktop-patterns.md"},
+    "wpf": {"inspect": "Bindings, commands, dispatcher work, and data collection size.", "decide": "Connect UI state to the established binding and command model.", "check": "Inspect DPI changes, keyboard use, and a large collection.", "reference": "references/desktop-patterns.md"},
+    "winui": {"inspect": "Window model, adaptive panes, and focus navigation.", "decide": "Preserve selection while adapting the relationship between panes.", "check": "Resize the window and inspect focus and scaling.", "reference": "references/desktop-patterns.md"},
+    "avalonia": {"inspect": "Target platforms, resource lookup, bindings, and input conventions.", "decide": "Keep shared intent while respecting each target's behavior.", "check": "Exercise the relevant platform rather than relying only on compilation.", "reference": "references/desktop-patterns.md"},
+    "uno": {"inspect": "Target platform differences and the shared view model.", "decide": "Keep responsive behavior compatible with the actual target controls.", "check": "Run the affected screen on the intended platform.", "reference": "references/desktop-patterns.md"},
+    "uwp": {"inspect": "Application lifecycle, adaptive layout, and focus behavior.", "decide": "Preserve meaningful screen state through lifecycle changes.", "check": "Inspect scaling, keyboard use, and resumed state.", "reference": "references/desktop-patterns.md"}
   }
 }

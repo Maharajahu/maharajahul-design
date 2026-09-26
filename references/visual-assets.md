@@ -30,6 +30,18 @@ For an illustration series, define shared perspective, line weight, palette,
 and detail density. Inspect the set together; matching prompts alone do not
 prove matching assets.
 
+For delivery, derive only the widths/crops the layout consumes. Use the existing
+image pipeline or responsive `picture`/`srcset` sizing, reserve intrinsic space,
+and keep offscreen media out of the critical path. An alpha cutout needs edge
+inspection against both light and dark surfaces; a repeating material needs a
+tile-seam check on geometry, not just a single image preview.
+
+For larger asset families, use the project's existing inventory to retain
+master/source, dimensions, role, crop/focal point, permitted usage and consuming
+components. Do not create a parallel manifest for a one-image change. Keep
+text, product controls and analytical charts semantic rather than baking them
+into raster art.
+
 ## Textures and procedural material
 
 Identify the map's intended use and color interpretation before import.
@@ -50,6 +62,13 @@ Use a poster and a usable static state when playback is delayed or unavailable.
 Inspect the start, middle, end, and any loop join. Test text readability over
 moving frames and the target platform's playback behavior. A valid file is
 not evidence that the requested movement or composition was achieved.
+
+Ambient video needs an honest poster, a static reduced-motion/failure state and
+a pause when hidden or offscreen. Use muted inline playback where appropriate;
+do not depend on autoplay for content or sound. Meaningful speech needs the
+project's caption/transcript path. Avoid decoding multiple invisible decorative
+videos. For textures, introduce GPU compression only when the existing renderer
+supports it and the measured memory or transfer benefit justifies conversion.
 
 ## Rights and provenance in the consuming project
 

@@ -3,6 +3,10 @@
 Start by naming the visible cues that would make the requested subject
 convincing. A scene can compile, animate, and still fail to depict its subject.
 
+Use [GPU pipelines](gpu-pipelines.md) for host/shader packing, simulation passes
+and audio envelopes. Use [Implementation recipes](recipes.md) for the concrete
+materials and scene mechanisms demonstrated by this package.
+
 ## Readability before rendering complexity
 
 Establish silhouette, scale, camera, lighting, and depth. Inspect that simple

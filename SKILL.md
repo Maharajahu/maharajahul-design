@@ -51,6 +51,40 @@ The references are independent. Read the ones relevant to the current work.
 | Images, illustrations, textures, or video | [Visual assets](references/visual-assets.md) |
 | Critique, screenshots, accessibility, regression checks | [Inspection](references/inspection.md) |
 
+For implementation detail beyond those foundations, select the relevant path:
+
+| Specific need | Working guidance |
+| --- | --- |
+| A coordinated palette, type scale, product layout or chart choice | [Design directions](references/design-directions.md) and a matching catalogue proposal |
+| Interrupted transitions, FLIP reordering, scroll choreography | [Motion recipes](references/motion-recipes.md) |
+| Framework boundaries, forms, data races, large collections | [Web patterns](references/web-patterns.md) |
+| SwiftUI, Compose, Flutter, React Native and adaptive state | [Native patterns](references/native-patterns.md) |
+| JavaFX, Windows desktop, editors, media and packaged resources | [Desktop patterns](references/desktop-patterns.md) |
+| WGSL byte layout, compute, ping-pong state, audio envelopes | [GPU pipelines](references/gpu-pipelines.md) |
+
+Do not load the full library for a local change. These paths restore depth
+without making every task read every platform's implementation instructions.
+
+## Start from a working recipe when one fits
+
+For a covered effect or interface, read the matching [implementation recipe](references/recipes.md)
+before building. The library covers liquid glass, orbital planets, liquid metal,
+spectral crystals, spatial networks, light tunnels, editorial pages, energy
+dashboards, product configurators, timeline workspaces, and contour landscapes.
+
+Each recipe identifies working source, construction order, numerical starting
+points, state changes, and failure checks. Read only the relevant recipe and
+its linked source. Reuse its mechanism, not its fictional branding or entire
+gallery shell. Values reproduce the example; adjust them to the user's brief
+and target device. These are web recipes, not native-platform implementations.
+
+Find recipes through the same offline lookup:
+
+~~~sh
+python scripts/lookup.py "liquid glass refraction" --surface application
+python scripts/lookup.py "product configurator finish" --surface campaign
+~~~
+
 ## Consult the decision library when a choice is unclear
 
 The package includes its own small, editable catalogue of design decisions.
@@ -65,12 +99,23 @@ python scripts/lookup.py "keyboard focus modal recovery" --surface application
 python scripts/lookup.py "water shoreline foam" --surface immersive --stack threejs
 python scripts/lookup.py --stack javafx --json
 python scripts/lookup.py --list-stacks
+python scripts/lookup.py "operations queue dashboard" --design-system --stack react
+python scripts/lookup.py "chart trend distribution" --domain chart
+python scripts/lookup.py --list-domains
 ~~~
 
 Query it when it can settle a concrete decision. The query and catalogue are
 English. Do not force a match: an empty result means reason from the brief or
 inspect the relevant implementation. Read the JSON directly if Python is
-unavailable. The catalogue does not prescribe a complete design.
+unavailable. The decision notes do not prescribe a complete design; matching
+recipe entries provide a concrete implementation starting point.
+
+Domain filters cover product, style, color, typography, chart, UX, landing,
+icons, motion, React, web, graphics, native, handoff, assets and inspection.
+`--design-system` returns a matching authored direction with numerical tokens,
+font roles, composition, motion and exclusions. It proposes; it does not certify
+a design, download assets or write a project specification. No match means no
+proposal. Preserve supplied brand choices even when another preset ranks first.
 
 ## Establish one visual argument
 

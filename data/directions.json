@@ -1,0 +1,169 @@
+[
+  {
+    "id": "direction-lensed-coast",
+    "title": "Lensed Coast: light passing through a quiet control layer",
+    "tags": ["glass", "liquid", "refraction", "coast", "translucent", "luminous"],
+    "domains": ["style", "color", "typography", "product"],
+    "surfaces": ["application", "immersive"],
+    "decision": "Separate a richly lit background from sparse, legible controls; reserve refraction for boundaries and keep critical text on a predictable surface.",
+    "cost": "Transparency makes contrast scene-dependent; an opaque resting surface must remain available.",
+    "check": "Inspect labels over the brightest and darkest backgrounds, including the opaque fallback.",
+    "reference": "references/design-directions.md",
+    "system": {
+      "palette": {"canvas": "#C7DFDA", "surface": "#F6FAF8", "ink": "#173A39", "muted": "#425E5B", "accent": "#175B58", "on_accent": "#FFFFFF", "border": "#658580"},
+      "typography": {"display": "system-ui, sans-serif", "body": "system-ui, sans-serif", "data": "ui-monospace, monospace", "body_size": "1rem", "line_height": 1.5, "measure": "60ch"},
+      "layout": "One main pane with grouped settings, a persistent current value, and a bottom-reachable primary action on narrow screens.",
+      "spacing_px": [4, 8, 14, 22, 36, 56],
+      "radius_px": [12, 24, 36],
+      "motion": {"feedback_ms": 120, "transition_ms": 280, "easing": "cubic-bezier(.2,.8,.2,1)", "reduced": "Change the selected state immediately and freeze ambient refraction."},
+      "avoid": "Do not refract text, stack nested blur panels, or imply the web shader is Apple's native material.",
+      "recipe": "references/recipes/liquid-glass.md"
+    }
+  },
+  {
+    "id": "direction-orbital-instrument",
+    "title": "Orbital Instrument: a large subject with precise annotations",
+    "tags": ["space", "planet", "orbital", "observatory", "scientific", "cinematic", "futuristic"],
+    "domains": ["style", "color", "typography", "product"],
+    "surfaces": ["campaign", "immersive"],
+    "decision": "Let the object occupy the visual center, use narrow annotation rails, and place controls where they do not cover the identifying silhouette.",
+    "cost": "Dense instrument labels can falsely imply measured data; mark decorative readouts as illustrative.",
+    "check": "Hide all annotations and verify the subject remains recognizable; then restore real controls and test touch reachability.",
+    "reference": "references/design-directions.md",
+    "system": {
+      "palette": {"canvas": "#090F1B", "surface": "#142236", "ink": "#EAF4F7", "muted": "#B4C6D4", "accent": "#A9DEDD", "on_accent": "#12282D", "border": "#697C96"},
+      "typography": {"display": "system-ui, sans-serif", "body": "system-ui, sans-serif", "data": "ui-monospace, monospace", "body_size": "1rem", "line_height": 1.55, "measure": "56ch"},
+      "layout": "Full-width scene, short top title, side annotation rail; put annotations below the scene rather than shrinking them on phones.",
+      "spacing_px": [4, 8, 16, 28, 44, 72],
+      "radius_px": [4, 10, 18],
+      "motion": {"feedback_ms": 110, "transition_ms": 420, "easing": "cubic-bezier(.22,.7,.2,1)", "reduced": "Keep a deliberate camera pose; use direct selection feedback."},
+      "avoid": "Do not turn every label into a blinking HUD or use bloom to hide missing geometry.",
+      "recipe": "references/recipes/orbital-planet.md"
+    }
+  },
+  {
+    "id": "direction-workshop-ledger",
+    "title": "Workshop Ledger: dense work with explicit next actions",
+    "tags": ["dashboard", "operations", "saas", "queue", "tickets", "ledger", "analytics", "energy"],
+    "domains": ["style", "color", "typography", "product"],
+    "surfaces": ["application"],
+    "decision": "Lead with the work queue and selected item, use aligned numeric columns, and let status explain which action is available.",
+    "cost": "High density saves scanning distance only while labels, focus and row actions remain distinct.",
+    "check": "Complete a task using keyboard, handle an empty queue, and distinguish stale data from zero.",
+    "reference": "references/design-directions.md",
+    "system": {
+      "palette": {"canvas": "#F0F2EC", "surface": "#FFFFFF", "ink": "#25392F", "muted": "#526153", "accent": "#286046", "on_accent": "#FFFFFF", "border": "#7A8D7B"},
+      "typography": {"display": "system-ui, sans-serif", "body": "system-ui, sans-serif", "data": "ui-monospace, monospace", "body_size": "1rem", "line_height": 1.45, "measure": "68ch"},
+      "layout": "Navigation, filter row, worklist and selected detail. At small widths show one pane while preserving selection and the return route.",
+      "spacing_px": [4, 8, 12, 20, 32, 48],
+      "radius_px": [4, 8, 12],
+      "motion": {"feedback_ms": 100, "transition_ms": 180, "easing": "cubic-bezier(.2,.7,.2,1)", "reduced": "Update rows in place and keep focus anchored to the affected item."},
+      "avoid": "Do not replace actionable work with decorative KPI cards or invent operational figures.",
+      "recipe": "references/recipes/energy-dashboard.md"
+    }
+  },
+  {
+    "id": "direction-archive-paper",
+    "title": "Archive Paper: a publication with space to read",
+    "tags": ["editorial", "journal", "magazine", "archive", "article", "essay", "paper", "serif"],
+    "domains": ["style", "color", "typography", "product", "landing"],
+    "surfaces": ["editorial", "campaign"],
+    "decision": "Contrast an expressive headline with a steady reading column, give captions a separate role, and treat whitespace as a change in pace.",
+    "cost": "Large display type needs editorially selected line breaks that still survive translation and text scaling.",
+    "check": "Read the longest article with fonts unavailable and at a narrow width; headings must remain meaningful without the artwork.",
+    "reference": "references/design-directions.md",
+    "system": {
+      "palette": {"canvas": "#F5EFDF", "surface": "#FFF9ED", "ink": "#362D25", "muted": "#665548", "accent": "#923B2D", "on_accent": "#FFFFFF", "border": "#9B8269"},
+      "typography": {"display": "Georgia, serif", "body": "Georgia, serif", "data": "system-ui, sans-serif", "body_size": "1.125rem", "line_height": 1.75, "measure": "64ch"},
+      "layout": "Opening image and title, a constrained reading column, captions attached to media and related stories after the conclusion.",
+      "spacing_px": [4, 10, 18, 30, 48, 80],
+      "radius_px": [0, 2, 8],
+      "motion": {"feedback_ms": 120, "transition_ms": 240, "easing": "ease-out", "reduced": "Open reading content without travel; never delay text visibility."},
+      "avoid": "Do not justify every paragraph, rasterize article text or decorate each section as a separate card.",
+      "recipe": "references/recipes/editorial-spread.md"
+    }
+  },
+  {
+    "id": "direction-material-room",
+    "title": "Material Room: a product explained through construction",
+    "tags": ["product", "furniture", "lamp", "configurator", "finish", "craft", "luxury", "gallery"],
+    "domains": ["style", "color", "typography", "product", "landing"],
+    "surfaces": ["campaign", "application"],
+    "decision": "Use an uncluttered object view, measured material contrast and a compact configuration column with an honest selection summary.",
+    "cost": "An attractive render cannot establish dimensions, stock, delivery or price; obtain those facts from the product source.",
+    "check": "Select every finish and confirm the image, name and review state agree at both wide and narrow sizes.",
+    "reference": "references/design-directions.md",
+    "system": {
+      "palette": {"canvas": "#EDE8DF", "surface": "#FAF7F0", "ink": "#35332F", "muted": "#625F57", "accent": "#61523C", "on_accent": "#FFFFFF", "border": "#928772"},
+      "typography": {"display": "Georgia, serif", "body": "system-ui, sans-serif", "data": "ui-monospace, monospace", "body_size": "1rem", "line_height": 1.6, "measure": "58ch"},
+      "layout": "Object and options in two columns; move options below a stable-height preview on phones and retain the selected finish.",
+      "spacing_px": [4, 8, 16, 26, 42, 68],
+      "radius_px": [2, 8, 16],
+      "motion": {"feedback_ms": 120, "transition_ms": 320, "easing": "cubic-bezier(.2,.65,.3,1)", "reduced": "Swap materials directly without rotating the object."},
+      "avoid": "Do not fake a checkout, hide variant costs or turn material selection into an unlabeled color-only control.",
+      "recipe": "references/recipes/product-configurator.md"
+    }
+  },
+  {
+    "id": "direction-night-signal",
+    "title": "Night Signal: controlled energy in a dark space",
+    "tags": ["music", "audio", "night", "performance", "kinetic", "tunnel", "neon", "festival"],
+    "domains": ["style", "color", "typography", "product", "landing"],
+    "surfaces": ["immersive", "campaign"],
+    "decision": "Use one luminous moving subject against a quiet dark field, and keep navigation and playback controls on an unchanging plane.",
+    "cost": "Bright high-speed repetition can overwhelm the content; intensity and pause need visible controls.",
+    "check": "Test silence, a strong transient, manual pause and reduced motion without losing the subject or controls.",
+    "reference": "references/design-directions.md",
+    "system": {
+      "palette": {"canvas": "#100D1D", "surface": "#241D38", "ink": "#F8EEF9", "muted": "#D0BAD9", "accent": "#F2A6CE", "on_accent": "#321B30", "border": "#A58CAE"},
+      "typography": {"display": "system-ui, sans-serif", "body": "system-ui, sans-serif", "data": "ui-monospace, monospace", "body_size": "1rem", "line_height": 1.55, "measure": "54ch"},
+      "layout": "Large visual stage with one short title and stable controls; details follow in ordinary document flow.",
+      "spacing_px": [4, 8, 16, 24, 40, 64],
+      "radius_px": [4, 12, 24],
+      "motion": {"feedback_ms": 90, "transition_ms": 360, "easing": "cubic-bezier(.16,.8,.24,1)", "reduced": "Use a static lit composition and direct playback status; remove repeated zoom and travel."},
+      "avoid": "Do not map raw audio bins to camera shake or make navigation depend on a moving target.",
+      "recipe": "references/recipes/kinetic-tunnel.md"
+    }
+  },
+  {
+    "id": "direction-civic-clear",
+    "title": "Civic Clear: a service that makes the next step legible",
+    "tags": ["service", "booking", "appointment", "public", "civic", "form", "health", "education"],
+    "domains": ["style", "color", "typography", "product", "landing"],
+    "surfaces": ["application", "campaign"],
+    "decision": "Build around eligibility, required information, the current step and a recoverable confirmation; use color as reinforcement rather than instruction.",
+    "cost": "A calm presentation must not soften important constraints, errors, fees or irreversible consequences.",
+    "check": "Finish the actual form using keyboard, repair an error and return without losing entered information.",
+    "reference": "references/design-directions.md",
+    "system": {
+      "palette": {"canvas": "#F1F5F7", "surface": "#FFFFFF", "ink": "#203746", "muted": "#4E6472", "accent": "#215675", "on_accent": "#FFFFFF", "border": "#748C99"},
+      "typography": {"display": "system-ui, sans-serif", "body": "system-ui, sans-serif", "data": "ui-monospace, monospace", "body_size": "1rem", "line_height": 1.65, "measure": "62ch"},
+      "layout": "Task heading, requirements, a single primary form column, adjacent explanations and an explicit review step when needed.",
+      "spacing_px": [4, 8, 16, 24, 36, 56],
+      "radius_px": [4, 8, 12],
+      "motion": {"feedback_ms": 100, "transition_ms": 160, "easing": "ease-out", "reduced": "Preserve focus and show feedback directly."},
+      "avoid": "Do not hide labels in placeholders, invent trust badges, or disable submission without explaining the missing requirement."
+    }
+  },
+  {
+    "id": "direction-field-atlas",
+    "title": "Field Atlas: a place understood through layers",
+    "tags": ["atlas", "field", "landscape", "contour", "nature", "map", "trail", "guide"],
+    "domains": ["style", "color", "typography", "product"],
+    "surfaces": ["editorial", "immersive", "application"],
+    "decision": "Pair terrain-like structure with clear place labels, scale context and a readable detail panel; use texture to suggest place without obscuring information.",
+    "cost": "A procedural landscape is not a navigational map and must not imply geographical accuracy.",
+    "check": "Make labels and selection understandable with motion disabled and the decorative terrain hidden.",
+    "reference": "references/design-directions.md",
+    "system": {
+      "palette": {"canvas": "#E6EBDE", "surface": "#F8FAF1", "ink": "#273B2B", "muted": "#53674F", "accent": "#385E39", "on_accent": "#FFFFFF", "border": "#7C9173"},
+      "typography": {"display": "Georgia, serif", "body": "system-ui, sans-serif", "data": "ui-monospace, monospace", "body_size": "1rem", "line_height": 1.65, "measure": "62ch"},
+      "layout": "Place index beside a visual field and selected detail; put detail after the selected place on narrow screens.",
+      "spacing_px": [4, 8, 14, 24, 40, 64],
+      "radius_px": [2, 6, 14],
+      "motion": {"feedback_ms": 120, "transition_ms": 300, "easing": "ease-in-out", "reduced": "Retain a static contour composition and immediate place selection."},
+      "avoid": "Do not infer coordinates, trail safety or live weather from a decorative procedural field.",
+      "recipe": "references/recipes/contour-landscape.md"
+    }
+  }
+]

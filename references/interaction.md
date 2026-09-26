@@ -2,6 +2,9 @@
 
 Design the transition between states, including what remains stable.
 
+For numerical timing seeds, reversible panels, FLIP reordering and scroll
+choreography, read [Motion recipes](motion-recipes.md).
+
 ## A control has a contract
 
 For the control being changed, identify:

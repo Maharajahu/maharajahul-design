@@ -2,6 +2,9 @@
 
 Locate the owner of state, layout, and resources before changing a screen.
 
+For detailed construction, use only the applicable guide: [Web](web-patterns.md),
+[native mobile](native-patterns.md), or [desktop and JavaFX](desktop-patterns.md).
+
 ## Web
 
 Use the existing route structure, components, and styling mechanism. A small

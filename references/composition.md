@@ -2,6 +2,9 @@
 
 Decide where attention belongs before choosing decoration.
 
+For concrete palettes, font roles, layout seeds and chart-selection recipes,
+read [Design directions](design-directions.md) and query one matching profile.
+
 ## A direction that belongs to the subject
 
 Find a concrete property of the subject that can shape the interface: the

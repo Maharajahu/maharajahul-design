@@ -22,7 +22,7 @@
 
 **A portable design skill for coding agents.** Maharajahul Design connects art direction, working interactions and visual inspection. It helps an agent make deliberate choices about hierarchy, materials, motion and implementation instead of treating styling as the last step.
 
-This repository contains the skill, seven focused references, an original decision catalogue, two optional tools, and **11 interactive demos**. The demos run with local HTML, CSS and JavaScript: no framework, build step, API key or runtime package installation.
+This repository contains the skill, focused implementation guides, an original decision catalogue, **8 coordinated design directions**, **11 source-backed recipes**, two optional tools, and **11 interactive demos**. The demos run with local HTML, CSS and JavaScript: no framework, build step, API key or runtime package installation.
 
 ## Explore the work
 
@@ -61,6 +61,16 @@ All demo products and data are illustrative. Future Studies are stylized real-ti
 | Visual assets | Plan useful images, textures and media, then inspect them in their actual placement. |
 | Design handoff | Preserve intent and implementation constraints across design files and code. |
 | Verification | Distinguish a successful build, a working interaction and a visually convincing result. |
+
+## Build from a recipe
+
+The [recipe library](references/recipes.md) explains the mechanisms behind every demo: construction order, working source, numerical starting points, interaction state, limitations and verification. Load the relevant recipe, not the entire collection.
+
+- **Materials and scenes:** [Liquid glass](references/recipes/liquid-glass.md), [orbital planet](references/recipes/orbital-planet.md), [liquid metal](references/recipes/liquid-metal.md), [spectral crystal](references/recipes/spectral-crystal.md), [spatial network](references/recipes/spatial-network.md), [kinetic tunnel](references/recipes/kinetic-tunnel.md), [contour landscape](references/recipes/contour-landscape.md).
+- **Working interfaces:** [Editorial spread](references/recipes/editorial-spread.md), [energy dashboard](references/recipes/energy-dashboard.md), [product configurator](references/recipes/product-configurator.md), [timeline workspace](references/recipes/timeline-workspace.md).
+- **Beyond the demos:** [Design systems, typography and charts](references/design-directions.md), [motion recipes](references/motion-recipes.md), [GPU pipelines and audio](references/gpu-pipelines.md), [web frameworks](references/web-patterns.md), [native UI](references/native-patterns.md), [desktop and JavaFX](references/desktop-patterns.md).
+
+Search across **16 domains** and implementation notes for **22 stacks**. A design-system proposal combines palette roles, font stacks, spacing, shape, layout and motion; it is an adaptable starting point, not an automatic design-quality guarantee. The eight authored directions are a compact library, not an exhaustive product database or a bundled font/icon collection.
 
 The skill is guidance for the agent you already use, not a model, rendering engine or automatic quality guarantee. Available tools and the agent's capabilities still determine what can be built and verified.
 
@@ -114,6 +124,10 @@ The [decision lookup](scripts/lookup.py) uses Python 3.10+ and the standard libr
 python scripts/lookup.py "pricing comparison evidence" --surface campaign
 python scripts/lookup.py "water shoreline foam" --surface immersive --stack threejs
 python scripts/lookup.py --stack swiftui --json
+python scripts/lookup.py "liquid glass refraction" --surface application
+python scripts/lookup.py "operations queue dashboard" --design-system --stack react
+python scripts/lookup.py "editorial journal paper" --domain typography --design-system
+python scripts/lookup.py --list-domains
 ```
 
 The [capture helper](scripts/capture.mjs) uses Node.js 20+ and an **existing** Playwright project with Chromium installed. It does not install dependencies or browsers.
@@ -128,10 +142,12 @@ It saves fresh screenshots and a report of observable browser problems. Inspect 
 
 ```sh
 python -B -m unittest discover -s tests -p "test_*.py"
-node --test tests/capture.test.mjs tests/samples.test.mjs tests/future.test.mjs tests/site.test.mjs
+node --test tests/capture.test.mjs tests/samples.test.mjs tests/future.test.mjs tests/site.test.mjs tests/recipes.test.mjs
 ```
 
 Browser integration tests run when `MAHARAJAHUL_BROWSER_PROJECT` points to an existing Playwright project. Otherwise those tests explicitly skip; unit and publication checks still run. CI runs the dependency-free checks, not a GPU benchmark.
+
+Recipe tests execute the documented mathematical/state cores. Catalogue tests check retrieval, local links, coverage, proposal boundaries and opaque palette text contrast. They do not certify shader portability, transparency contrast or native-platform behavior without rendering on the relevant target.
 
 The Future Studies suite checks six scenes at desktop and phone sizes, non-empty rendering, actual pixel changes from controls, navigation, inspection mode and reduced-motion behavior. Phone-sized Chromium checks are not a substitute for testing physical iOS and Android devices. GPU performance and browser support vary; Synapse uses Canvas 2D when WebGL is unavailable.
 
