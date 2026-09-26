@@ -18,11 +18,19 @@
   <a href="#develop-and-verify">Development</a>
 </p>
 
-<a href="https://maharajahu.github.io/maharajahul-design/samples/future/#lucent"><img src="assets/previews/lucent.jpg" width="1200" alt="LUCENT: a refractive glass interface over a procedural coastline. Open the interactive demo."></a>
+<a href="https://maharajahu.github.io/maharajahul-design/samples/aurel/"><img src="assets/previews/aurel.jpg" width="1200" alt="AUREL: a sculpted metal object, expressive typography and an interactive studio. Open the working experience."></a>
 
 **A portable design skill for coding agents.** Maharajahul Design connects art direction, working interactions and visual inspection. It helps an agent make deliberate choices about hierarchy, materials, motion and implementation instead of treating styling as the last step.
 
-This repository contains the skill, focused implementation guides, an original decision catalogue, **8 coordinated design directions**, **11 source-backed recipes**, two optional tools, and **11 interactive demos**. The demos run with local HTML, CSS and JavaScript: no framework, build step, API key or runtime package installation.
+This repository contains the skill, focused implementation guides, an original decision catalogue, **8 coordinated design directions**, **11 source-backed recipes**, two optional tools, and **12 interactive demos**. The demos run with local HTML, CSS and JavaScript: no framework, build step, API key or runtime package installation.
+
+## AUREL — the material atelier
+
+**[Enter the experience →](https://maharajahu.github.io/maharajahul-design/samples/aurel/)**
+
+An editorial website built around three procedural sculptures: Continuum, Solstice and Aperture. Rotate the actual geometry, switch between titanium, champagne and obsidian, move the studio light, and save your perspective as a PNG. The surrounding experience pairs asymmetric image layouts with animated contour drawings and scroll reveals.
+
+The gallery images are captures of the same renderer, not stock imagery. Graphics pause offscreen and when the page is hidden; reduced motion starts with a still frame. Drag, keyboard rotation, explicit motion controls, responsive layouts, static fallback and graphics-context recovery are included. This is a fictional atelier and a stylized material study, not a physical simulation.
 
 ## Explore the work
 
@@ -100,7 +108,7 @@ Establish a clear visual direction, implement the actual interactions,
 and inspect the result at desktop and phone sizes.
 ```
 
-No script installation is required to read and use the skill. The demos also open directly from `samples/future/index.html` or `samples/index.html`.
+No script installation is required to read and use the skill. The demos also open directly from `samples/aurel/index.html`, `samples/future/index.html` or `samples/index.html`.
 
 ## Try a brief
 
@@ -142,7 +150,7 @@ It saves fresh screenshots and a report of observable browser problems. Inspect 
 
 ```sh
 python -B -m unittest discover -s tests -p "test_*.py"
-node --test tests/capture.test.mjs tests/samples.test.mjs tests/future.test.mjs tests/site.test.mjs tests/recipes.test.mjs
+node --test tests/capture.test.mjs tests/samples.test.mjs tests/future.test.mjs tests/aurel.test.mjs tests/site.test.mjs tests/recipes.test.mjs
 ```
 
 Browser integration tests run when `MAHARAJAHUL_BROWSER_PROJECT` points to an existing Playwright project. Otherwise those tests explicitly skip; unit and publication checks still run. CI runs the dependency-free checks, not a GPU benchmark.
@@ -150,6 +158,8 @@ Browser integration tests run when `MAHARAJAHUL_BROWSER_PROJECT` points to an ex
 Recipe tests execute the documented mathematical/state cores. Catalogue tests check retrieval, local links, coverage, proposal boundaries and opaque palette text contrast. They do not certify shader portability, transparency contrast or native-platform behavior without rendering on the relevant target.
 
 The Future Studies suite checks six scenes at desktop and phone sizes, non-empty rendering, actual pixel changes from controls, navigation, inspection mode and reduced-motion behavior. Phone-sized Chromium checks are not a substitute for testing physical iOS and Android devices. GPU performance and browser support vary; Synapse uses Canvas 2D when WebGL is unavailable.
+
+The AUREL suite checks all three forms, material and light changes in rendered pixels, pointer and keyboard rotation, an actual PNG download, layouts from 320 to 1440 pixels wide, motion preferences, offscreen pausing, WebGL fallback and context recovery. These are behavior checks, not a frame-rate or visual-quality score.
 
 ## Source and attribution
 

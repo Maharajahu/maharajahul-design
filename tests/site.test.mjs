@@ -37,3 +37,13 @@ test('showcase loads local assets without third-party runtime code', () => {
   assert.ok(site.includes('prefers-reduced-motion'));
   assert.ok(site.includes('class="skip"'));
 });
+
+test('Aurel is featured in the showcase and README with a local browser preview', async () => {
+  assert.ok(site.includes('href="samples/aurel/"'));
+  assert.ok(readme.includes('https://maharajahu.github.io/maharajahul-design/samples/aurel/'));
+  assert.ok(site.includes('<b>12</b> interactive studies'));
+  assert.ok(readme.includes('**12 interactive demos**'));
+  const data = await readFile(path.join(root, 'assets', 'previews', 'aurel.jpg'));
+  assert.equal(data.readUInt16BE(0), 0xffd8);
+  assert.ok(data.length > 10000 && data.length < 1000000);
+});
