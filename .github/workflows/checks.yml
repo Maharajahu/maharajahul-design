@@ -23,4 +23,4 @@ jobs:
       - name: Decision catalogue and lookup
         run: python3 -B -m unittest discover -s tests -p 'test_*.py'
       - name: Capture utility and publication checks
-        run: node --test tests/capture.test.mjs tests/samples.test.mjs tests/future.test.mjs tests/aurel.test.mjs tests/site.test.mjs tests/recipes.test.mjs
+        run: node --test tests/capture.test.mjs tests/samples.test.mjs tests/future.test.mjs tests/aurel.test.mjs tests/site.test.mjs tests/support.test.mjs tests/recipes.test.mjs
